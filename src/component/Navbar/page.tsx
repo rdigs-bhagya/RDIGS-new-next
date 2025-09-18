@@ -108,7 +108,7 @@ const Navbar = () => {
                 </div>
               </li>
 
-              <li><Link href="/service.php" onClick={closeAll} className={linkBase}>Services</Link></li>
+              <li><Link href="/ServicePage" onClick={closeAll} className={linkBase}>Services</Link></li>
 
               {/* Strategies Dropdown */}
               <li className="relative"

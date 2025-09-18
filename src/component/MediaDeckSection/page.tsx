@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function MediaDeckSection() {
   return (
-    <div className="py-12" style={{ paddingLeft: '2.75rem', paddingRight: '2.75rem' }}>
+    <div className="py-6" style={{ paddingLeft: '2.75rem', paddingRight: '2.75rem' }}>
       <div className="flex flex-col md:flex-row">
 
         {/* Left container (About Us content) */}

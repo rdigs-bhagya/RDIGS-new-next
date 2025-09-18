@@ -4,6 +4,7 @@ import Topbar from '@/component/Topbar/page';
 import Navbar from '@/component/Navbar/page';
 import './globals.css';
 import { DM_Sans } from 'next/font/google';
+import Footer from '@/component/Footer/page';
 
 
 // Import Google Font via next/font/google
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Topbar />
         <Navbar />
         {children}
+        <Footer/>
       </body>
     </html>
   );

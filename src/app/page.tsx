@@ -9,6 +9,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import TestimonialCarousel from '@/component/TestimonialCarousel/page';
 import TeamSection from '@/component/Teamsection/page';
 import MediaDeckSection from '@/component/MediaDeckSection/page';
+import BlogSection from '@/component/BlogSection/page';
 
 type Slide = {
   title1: string;
@@ -420,7 +421,9 @@ export default function HomepageCarousel() {
 
       <TestimonialCarousel/>
       <TeamSection/>
+      <BlogSection/>
       <MediaDeckSection/>
+
 
 
     </>
