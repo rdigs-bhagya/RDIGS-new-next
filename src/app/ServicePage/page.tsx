@@ -31,6 +31,7 @@ export default function ServicesPage() {
             description: "Now is the time to Propel Your B2B Growth & Boost Your Sales Performance with RDIGS Sales"
         }
     ]
+
     const blogs = [
         {
             id: 1,
@@ -54,9 +55,9 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 100 }}   // start from below
             animate={{ opacity: 1, y: 0 }}     // move to normal position
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-gray-50 py-8 px-4 mb-5"
+            className="bg-gray-50 px-4 mb-5"
         >
-            <div className="max-w-3xl mx-auto text-center pb-8">
+            <div className="max-w-3xl mx-auto text-center pb-8 py-8">
                 <h4
                     className=" font-bold"
                     style={{ color: "#3099D5", fontSize: "24px" }}
@@ -171,7 +172,6 @@ export default function ServicesPage() {
                     </Link>
                 </div>
             </div>
-
         </motion.div>
     )
 }

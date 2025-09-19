@@ -101,14 +101,17 @@ const Navbar = () => {
                 <div
                   className={`${openDropdown === 'company' ? 'block' : 'hidden'} bg-white lg:absolute lg:left-0 lg:top-full w-full lg:w-40 shadow-md rounded z-50`}
                 >
-                  <Link href="/about1.php" onClick={closeAll} className={dropdownLinkBase}>About</Link>
+                  <Link href="/About" onClick={closeAll} className={dropdownLinkBase}>About</Link>
                   <Link href="/ourdifferentiation.php" onClick={closeAll} className={dropdownLinkBase}>Our Differentiation</Link>
                   <Link href="/career.php" onClick={closeAll} className={dropdownLinkBase}>Career</Link>
                   <Link href="/life.php" onClick={closeAll} className={dropdownLinkBase}>Life At RDIGS</Link>
                 </div>
               </li>
 
-              <li><Link href="/ServicePage" onClick={closeAll} className={linkBase}>Services</Link></li>
+              <li>
+                <Link href="/ServicePage" onClick={closeAll} className={linkBase}>Services
+                </Link>
+              </li>
 
               {/* Strategies Dropdown */}
               <li className="relative"
