@@ -26,11 +26,11 @@ export default function LifeAtRDIGS() {
                 RDIGS Where Employees Thrive Together
               </h1>
 
-              <p className="text-[#606060] mb-6">
-                At RDIGS, we foster an employee-centric environment where every team member is valued as part of our family.
-                We stand by the belief that "Employees are the voice of every organization." Our commitment goes beyond just work—we strive to
-                excel in everything we do, whether it's achieving professional milestones or creating memorable moments of fun.
-              </p>
+<p className="text-[#606060] mb-6">
+  At RDIGS, we foster an employee-centric environment where every team member is valued as part of our family.
+  We stand by the belief that &quot;Employees are the voice of every organization.&quot; Our commitment goes beyond just work—we strive to
+  excel in everything we do, whether it&apos;s achieving professional milestones or creating memorable moments of fun.
+</p>
 
               {/* Counters */}
               <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-4">

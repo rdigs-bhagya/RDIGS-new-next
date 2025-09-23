@@ -124,10 +124,12 @@ export default function HomeSection() {
                 </div>
                 <div className="xl:w-1/2 flex animate__animated animate__fadeInRight">
                     <div className="bg-white p-4 w-full flex flex-col justify-center">
-                        <h4 className="text-[#3099D5] text-[24px] mb-2">Other's</h4>
+                        <h4 className="text-[#3099D5] text-[24px] mb-2">Other&apos;s</h4>
                         <h1 className="text-5xl font-bold mb-4">Is This How Your Leads Look Like?</h1>
                         <p>
-                            Insufficient data leaves sales teams stumbling in the dark, challenging their ability to understand customer needs and make well-informed decisions. It's a big challenge that makes success harder.
+                            Insufficient data leaves sales teams stumbling in the dark, challenging
+                            their ability to understand customer needs and make well-informed decisions.
+                            It&apos;s a big challenge that makes success harder.
                         </p>
                     </div>
                 </div>
@@ -141,7 +143,10 @@ export default function HomeSection() {
                             Get Better Data & Deeper Insights with RDIGS
                         </h1>
                         <p>
-                            Improve your sales outreach by using intent data and intelligent insights. Marketing empowers the sales team by creating brand awareness and engaging prospects' interest to nurture them further. Adopt a data-driven approach to convert leads into potential opportunities.
+                            Improve your sales outreach by using intent data and intelligent insights.
+                            Marketing empowers the sales team by creating brand awareness and engaging
+                            prospects&apos; interest to nurture them further. Adopt a data-driven approach
+                            to convert leads into potential opportunities.
                         </p>
                     </div>
                 </div>

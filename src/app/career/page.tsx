@@ -13,12 +13,6 @@ interface Job {
     title: string;
 }
 
-// Props for the modal: job is always defined when open
-interface ApplyModalProps {
-    job: Job;
-    isOpen: boolean;
-    onClose: () => void;
-}
 
 export default function CareerIntro() {
     // animation settings
