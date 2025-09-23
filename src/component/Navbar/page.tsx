@@ -103,8 +103,8 @@ const Navbar = () => {
                 >
                   <Link href="/About" onClick={closeAll} className={dropdownLinkBase}>About</Link>
                   <Link href="/our-differentiation" onClick={closeAll} className={dropdownLinkBase}>Our Differentiation</Link>
-                  <Link href="/career.php" onClick={closeAll} className={dropdownLinkBase}>Career</Link>
-                  <Link href="/life.php" onClick={closeAll} className={dropdownLinkBase}>Life At RDIGS</Link>
+                  <Link href="/career" onClick={closeAll} className={dropdownLinkBase}>Career</Link>
+                  <Link href="/life-at-rdigs" onClick={closeAll} className={dropdownLinkBase}>Life At RDIGS</Link>
                 </div>
               </li>
 
