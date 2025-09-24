@@ -9,7 +9,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import TestimonialCarousel from '@/component/TestimonialCarousel/page';
 import TeamSection from '@/component/Teamsection/page';
 import MediaDeckSection from '@/component/MediaDeckSection/page';
-import BlogSection from '@/component/BlogSection/page';
+import BlogCard from '@/component/BlogSection/page';
 
 type Slide = {
   title1: string;
@@ -51,6 +51,13 @@ export default function HomepageCarousel() {
     '/client-logo/X-Taas.png',
     '/client-logo/Panterra.png',
     '/client-logo/Inside.png',
+  ];
+
+  const blogs = [
+    { id: 1, title: "A Guide to B2B Lead Qualification", image: "/blog/Blog 11.webp" },
+    { id: 2, title: "Data silos block B2B decisions", image: "/blog/Blog 12.webp" },
+    { id: 3, title: "B2B Journey & Touchpoints", image: "/blog/Blog 13.webp" },
+    { id: 4, title: "Extra Blog Example", image: "/blog/Blog 14.webp" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -419,10 +426,36 @@ export default function HomepageCarousel() {
         </div>
       </div>
 
-      <TestimonialCarousel/>
-      <TeamSection/>
-      <BlogSection/>
-      <MediaDeckSection/>
+      <TestimonialCarousel />
+      <TeamSection />
+      <div className="container-fluid py-3 px-6 md:px-10 bg-white">
+        <div className="text-center mx-auto max-w-4xl mb-4">
+          <h4 className="text-[#16243D] text-xl font-bold mb-2">Blogs & Articles</h4>
+          <h1 className="text-[40px] font-bold text-[#3099D5] leading-tight mb-2">
+            Our Market Insights, Your Competitive Edge!
+          </h1>
+          <p className="font-medium text-[24px] leading-[29px] text-[#606060] mb-1">
+            Explore Expert Perspectives and Insights That Fuel B2B Demand Generation and Marketing Growth.
+          </p>
+        </div>
+
+        {/* Show only 3 blogs */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {blogs.slice(0, 3).map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <a
+            href="/blog"
+            className="inline-block bg-[#3099D5] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#267CB0] transition-colors duration-300"
+          >
+            View All Blogs
+          </a>
+        </div>
+      </div>
+      <MediaDeckSection />
 
 
 

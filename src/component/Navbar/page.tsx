@@ -42,12 +42,11 @@ const Navbar = () => {
 
   return (
     <header
-      className={`sticky top-0 z-[999] bg-white shadow-sm transition-transform duration-500 ${
-        showNavbar ? 'translate-y-0' : '-translate-y-full'
-      }`}
+      className={`sticky top-0 z-[999] bg-white shadow-sm transition-transform duration-500 ${showNavbar ? 'translate-y-0' : '-translate-y-full'
+        }`}
     >
       <nav className="max-w-[1400px] mx-auto flex items-center justify-between px-4 lg:px-10 py-2 lg:py-3">
-        
+
         {/* Logo - Left */}
         <Link href="/" onClick={closeAll} className="flex items-center">
           <Image
@@ -88,8 +87,8 @@ const Navbar = () => {
 
               {/* Company Dropdown */}
               <li className="relative"
-                  onMouseEnter={() => !menuOpen && setOpenDropdown('company')}
-                  onMouseLeave={() => !menuOpen && setOpenDropdown(null)}
+                onMouseEnter={() => !menuOpen && setOpenDropdown('company')}
+                onMouseLeave={() => !menuOpen && setOpenDropdown(null)}
               >
                 <button
                   onClick={() => toggleDropdown('company')}
@@ -115,8 +114,8 @@ const Navbar = () => {
 
               {/* Strategies Dropdown */}
               <li className="relative"
-                  onMouseEnter={() => !menuOpen && setOpenDropdown('strategies')}
-                  onMouseLeave={() => !menuOpen && setOpenDropdown(null)}
+                onMouseEnter={() => !menuOpen && setOpenDropdown('strategies')}
+                onMouseLeave={() => !menuOpen && setOpenDropdown(null)}
               >
                 <button
                   onClick={() => toggleDropdown('strategies')}
@@ -137,8 +136,8 @@ const Navbar = () => {
 
               {/* Resources Dropdown */}
               <li className="relative"
-                  onMouseEnter={() => !menuOpen && setOpenDropdown('resources')}
-                  onMouseLeave={() => !menuOpen && setOpenDropdown(null)}
+                onMouseEnter={() => !menuOpen && setOpenDropdown('resources')}
+                onMouseLeave={() => !menuOpen && setOpenDropdown(null)}
               >
                 <button
                   onClick={() => toggleDropdown('resources')}
@@ -150,9 +149,9 @@ const Navbar = () => {
                 <div
                   className={`${openDropdown === 'resources' ? 'block' : 'hidden'} bg-white lg:absolute lg:left-0 lg:top-full w-full lg:w-40 shadow-md rounded z-50`}
                 >
-                  <Link href="/casestudies.php" onClick={closeAll} className={dropdownLinkBase}>Case Studies</Link>
-                  <Link href="/corporatedesk.php" onClick={closeAll} className={dropdownLinkBase}>Media Deck</Link>
-                  <Link href="/blog.php" onClick={closeAll} className={dropdownLinkBase}>Blogs</Link>
+                  <Link href="/case-studies" onClick={closeAll} className={dropdownLinkBase}>Case Studies</Link>
+                  <Link href="/media-deck" onClick={closeAll} className={dropdownLinkBase}>Media Deck</Link>
+                  <Link href="/blogs" onClick={closeAll} className={dropdownLinkBase}>Blogs</Link>
                   <Link href="/events.php" onClick={closeAll} className={dropdownLinkBase}>Events</Link>
                 </div>
               </li>
