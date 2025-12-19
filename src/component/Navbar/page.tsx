@@ -108,7 +108,7 @@ const Navbar = () => {
               </li>
 
               <li>
-                <Link href="/ServicePage" onClick={closeAll} className={linkBase}>Services
+                <Link href="/Services" onClick={closeAll} className={linkBase}>Services
                 </Link>
               </li>
 

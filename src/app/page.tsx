@@ -21,21 +21,21 @@ type Slide = {
 export default function HomepageCarousel() {
   const slides: Slide[] = [
     {
-      title1: 'OWN THE',
-      title2: 'BUYER JOURNEY.',
-      text: 'Leverage Advanced Insights, Personalized ABM, And Precision Targeting To Reach Decision-Makers.',
+      title1: 'FOR MOST DEMAND GEN',
+      title2: 'AGENCIES, DEMAND GENERATION STOPS AT THE DOWNLOAD',
+      text: 'We build strategies that make buyers remember your brand — and come back when they’re ready to buy.',
       img: '/home/own.png',
     },
     {
-      title1: 'DRIVE MORE',
-      title2: 'SALES FASTER.',
-      text: 'Fuel your B2B marketing engine with data-driven strategies that  capture attention, spark conversations, and convert intent into revenue.',
+      title1: 'OWN THE',
+      title2: 'BUYER JOURNEY',
+      text: 'Leverage advanced insights, personalised ABM, and precision targeting to engage real decision-makers.',
       img: '/home/ingnite.png',
     },
     {
-      title1: 'POWER YOUR',
-      title2: 'GROWTH STRATEGY.',
-      text: 'Turn insights into impactful actions.',
+      title1: 'IGNITE DEMAND.',
+      title2: 'DRIVE GROWTH.',
+      text: 'Fuel your B2B marketing with data-driven strategies that capture attention and convert intent into revenue.',
       img: '/home/ROI.png',
     },
   ];
@@ -82,8 +82,19 @@ export default function HomepageCarousel() {
 
           {/* Left Section */}
           <div className="flex-1">
-            <h1 className="text-4xl font-bold text-sky-600">{slides[currentIndex].title1}</h1>
-            <h2 className="text-4xl font-extrabold text-gray-900">{slides[currentIndex].title2}</h2>
+            <h1 className="text-4xl font-bold text-[#3099D5]">{slides[currentIndex].title1}</h1>
+            <h2 className="text-4xl font-extrabold text-[#16243D]">
+              {currentIndex === 0 ? (
+                <>
+                  <span className="text-[#3099D5]">
+                    {slides[currentIndex].title2.split(" ")[0]}
+                  </span>{" "}
+                  {slides[currentIndex].title2.split(" ").slice(1).join(" ")}
+                </>
+              ) : (
+                slides[currentIndex].title2
+              )}
+            </h2>
             <p className="mt-4 text-lg text-black-400 max-w-[450px]">{slides[currentIndex].text}</p>
 
             {/* Static Form */}
@@ -104,7 +115,7 @@ export default function HomepageCarousel() {
             </form>
 
             <p className="mt-3 text-lg text-black-400">
-              Let&apos;s redefine your growth journey.
+              Stay ahead with insights that help you drive measurable growth.
             </p>
           </div>
 
@@ -197,7 +208,7 @@ export default function HomepageCarousel() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-6">
           {/* Service 1 */}
           <div className="group cursor-pointer p-3 pt-0 bg-white rounded-lg shadow-sm text-center transition hover:shadow-lg active:scale-[0.98]">
             <div className="p-4 mb-2 flex justify-center overflow-hidden">
@@ -212,7 +223,7 @@ export default function HomepageCarousel() {
             <h4 className="mb-2 font-medium text-[24px] text-[#606060]">
               B2B Lead Generation
             </h4>
-            <p className="mb-2 text-gray-400 text-base font-normal transition-colors group-hover:text-black group-active:text-black">
+            <p className="mb-2 text-[#787878] text-base font-normal transition-colors group-hover:text-black group-active:text-black">
               Empower Your Sales Team and Drive Results with Us Account-Based
               marketing services
             </p>
@@ -236,11 +247,10 @@ export default function HomepageCarousel() {
               />
             </div>
             <h4 className="mb-2 font-medium text-[24px] text-[#606060]">
-              B2B Advertising
+              RDIGS Engagement Engine
             </h4>
-            <p className="mb-2 text-gray-400 text-base font-normal transition-colors group-hover:text-black group-active:text-black">
-              Drive Sustainable Growth for Your Sales and Marketing Efforts with
-              Data-Driven Strategies
+            <p className="mb-2 text-[#787878] text-base font-normal transition-colors group-hover:text-black group-active:text-black">
+              Turn passive leads into active conversations — and get your brand on more buying shortlists.
             </p>
             <Link
               href="/b2badvertising"
@@ -262,11 +272,10 @@ export default function HomepageCarousel() {
               />
             </div>
             <h4 className="mb-2 font-medium text-[24px] text-[#606060]">
-              B2B SDR as a Service
+              RDIGS Outbound Engine
             </h4>
-            <p className="mb-2 text-gray-400 text-base font-normal transition-colors group-hover:text-black group-active:text-black">
-              Unlock the Power of Precision Marketing with RDIGS’ Intent-Based
-              Marketing Services
+            <p className="mb-2 text-[#787878] text-base font-normal transition-colors group-hover:text-black group-active:text-black">
+              Human-led outreach that drives webinar registrations, qualifies data, and creates more opportunitiess
             </p>
             <Link
               href="/b2bsdrasaservice"
@@ -277,7 +286,7 @@ export default function HomepageCarousel() {
           </div>
 
           {/* Service 4 */}
-          <div className="group cursor-pointer p-3 pt-0 bg-white rounded-lg shadow-sm text-center transition hover:shadow-lg active:scale-[0.98]">
+          {/* <div className="group cursor-pointer p-3 pt-0 bg-white rounded-lg shadow-sm text-center transition hover:shadow-lg active:scale-[0.98]">
             <div className="p-4 mb-2 flex justify-center overflow-hidden">
               <Image
                 src="/homepage-service-images/Content-Syndication.png"
@@ -300,7 +309,7 @@ export default function HomepageCarousel() {
             >
               Learn More
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Button Below the Services */}
@@ -321,26 +330,24 @@ export default function HomepageCarousel() {
       >
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           {/* Left Content */}
-          <div className="bg-white rounded p-4  h-[488px]">
+          <div className="bg-white rounded p-8 h-[488px]">
             <h1
-              className="mb-2 font-bold"
-              style={{ color: "#3099D5", fontSize: "2.5rem" }}
+              className="font-bold leading-tight m-0"
+              style={{ color: "#3099D5", fontSize: "40px" }}
             >
               Our Purpose, Your Progress!
             </h1>
             <h4
-              className="mb-3"
+              className="mb-1"
               style={{ color: "#606060", fontWeight: 500, fontSize: "24px", lineHeight: "29px" }}
             >
-              Learn What Fuels Our Passion for B2B Marketing
+              Learn what fuels our passion for B2B marketing.
             </h4>
             <p className="mb-2 text-[#16243D]">
-              RDIGS was founded by a team of experienced professionals, each with over 15 years in sales
-              and B2B lead generation. Recognizing a key gap in the market, they set out with a mission to
-              address it head-on. While driven by technology, RDIGS values the human touch, ensuring each
-              client benefits from a personalized experience.
+              We recognise a growing problem across the demand generation industry: too many leads forget the brand behind the content they downloaded, and too many vendors rely on intent signals that are unreliable or misinterpreted as guaranteed buying intent. The result is wasted spend and poor-quality demand.
+              Our mission is to help marketers change that. We build campaigns that drive awareness as well as leads, ensuring your brand is remembered when buyers are ready to act and your business is more likely to make the shortlist.
             </p>
-            <p className="mb-1 text-[#212529] flex items-center">
+            {/* <p className="mb-1 text-[#212529] flex items-center">
               <FontAwesomeIcon icon={faCheck} className="text-[#3099D5] mr-2" />
               Technological Innovation
             </p>
@@ -355,8 +362,8 @@ export default function HomepageCarousel() {
             <p className="mb-3 text-[#212529] flex items-center">
               <FontAwesomeIcon icon={faCheck} className="text-[#3099D5] mr-2" />
               Exceptional Service
-            </p>
-            <a
+            </p> */}
+            <a 
               href="about1.php"
               className="inline-block bg-[#3099D5] text-white rounded-full py-2 px-4 hover:bg-[#16243D] transition"
             >
@@ -427,7 +434,7 @@ export default function HomepageCarousel() {
       </div>
 
       <TestimonialCarousel />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <div className="container-fluid py-3 px-6 md:px-10 bg-white">
         <div className="text-center mx-auto max-w-4xl mb-4">
           <h4 className="text-[#16243D] text-xl font-bold mb-2">Blogs & Articles</h4>

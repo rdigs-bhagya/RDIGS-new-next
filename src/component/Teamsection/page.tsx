@@ -20,13 +20,6 @@ const teamMembers = [
     delay: 0.4,
   },
   {
-    name: "William Mathurai",
-    role: "Chief Revenue Officer",
-    img: "/team/Will-1.png",
-    linkedin: "https://www.linkedin.com/in/william-k-m-12189737/",
-    delay: 0.6,
-  },
-  {
     name: "Neal Brooker",
     role: "Fractional Sales Director, EMEA",
     img: "/team/Nial-7.png",

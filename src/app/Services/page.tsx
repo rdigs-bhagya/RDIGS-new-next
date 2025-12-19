@@ -9,25 +9,25 @@ export default function ServicesPage() {
         {
             id: 'b2b-lead-generation',
             title: 'B2B Lead Generation',
-            image: '/services/b2bleadgeneration.png',
+            image: '/Services/b2bleadgeneration.png',
             description: "Empower Your Sales Team and Drive Results with RDIGS’ Account-Based Marketing Services"
         },
-        {
-            id: 'b2b-advertising',
+        { 
+            id: 'b2b-advertising', 
             title: 'B2B Advertising',
-            image: '/services/B2B-Advertising (1).png',
+            image: '/Services/B2B-Advertising (1).png',
             description: "Drive Sustainable Growth for Your Sales and Marketing Efforts with Data-Driven Strategies"
         },
         {
-            id: 'b2b-sdr-as-a-service',
+            id: 'b2b-sdr-as-a-service', 
             title: 'B2B SDR as a Service',
-            image: '/services/B2B-SDR-as-a-Service.png',
+            image: '/Services/B2B-SDR-as-a-Service.png',
             description: "Unlock the Power of Precision Marketing with RDIGS’ Intent-Based Marketing Services"
         },
         {
             id: 'content-syndication',
             title: 'Content Syndication',
-            image: '/services/Content-Syandication.png',
+            image: '/Services/Content-Syandication.png',
             description: "Now is the time to Propel Your B2B Growth & Boost Your Sales Performance with RDIGS Sales"
         }
     ]
@@ -80,7 +80,7 @@ export default function ServicesPage() {
                         className="group bg-gray-100 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:bg-[#3099D5] hover:text-white flex flex-col"
                     >
                         <div className="relative w-full h-52 overflow-hidden rounded-t-xl">
-                            <Image
+                            <Image    
                                 src={item.image}
                                 alt={item.title}
                                 fill
@@ -98,10 +98,10 @@ export default function ServicesPage() {
                                     {item.description}
                                 </p>
                             </div>
-                            <Link href={`/services/${item.id}`}>
+                            <Link href={`/Services/${item.id}`}>
                                 <span className="inline-block bg-[#3099D5] text-white group-hover:bg-white group-hover:text-[#3099D5] hover:bg-[#16243D] hover:text-white font-semibold text-sm px-5 py-2 rounded-full transition-all duration-200">
                                     Read More
-                                </span>
+                                </span>                                                                                                                 
                             </Link>
                         </div>
                     </motion.div>

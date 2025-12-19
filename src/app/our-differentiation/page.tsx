@@ -44,41 +44,101 @@ export default function HomeSection() {
     return (
         <div className="container mx-auto py-8 px-10">
 
-            {/* Heading */}
-            <div className="text-center mx-auto pb-8 max-w-4xl animate__animated animate__fadeInUp animate__delay-200ms">
-                <h1 className="text-[#3099D5] text-4xl md:text-[40px] font-bold mb-2ntext-center">
-                    We Assist Partners To Win New Businesses & Fuel Revenue
-                </h1>
-            </div>
+            <section className="bg-white py-4">
+                <div className="max-w-7xl mx-auto px-4 py-4">
+                    {/* Heading Section */}
+                    <div
+                        className="text-center mx-auto mb-12 animate__animated animate__fadeInUp"
+                        style={{ maxWidth: "800px" }}
+                    >
+                        <h1
+                            className="font-bold mb-3"
+                            style={{ color: "#3099D5", fontSize: "2.5rem" }}
+                        >
+                            Why Clients Choose RDIGS
+                        </h1>
 
-            {/* First Row */}
-            <div className="flex flex-col md:flex-row gap-8 mb-4 items-center">
-                {/* Left Paragraph */}
-                <div className="md:w-1/2 animate__animated animate__fadeInLeft">
-                    <h5 className="font-bold mb-2 text-center text-[#16243D] text-[20px]">Experienced Demand Generation Team</h5>
-                    <p className="bg-gray-100 p-4 rounded text-[#606060]">
-                        We are an Omnichannel Marketing Agency with over 10 years of Demand Generation experience, a team of 100+ highly trained marketing professionals, and a Global Reach of 52.6 million business professionals and leaders.
-                    </p>
-                </div>
+                        <p className="text-gray-500 mb-4 text-[1.1rem] leading-relaxed">
+                            Most demand generation stops at the download. At RD Info Global
+                            Solutions, we go further. We help ensure the leads you generate—
+                            whether at the top, middle, or bottom of the funnel—remember your
+                            brand, understand the outcomes you deliver, and are more likely to
+                            come back when they’re ready to buy.
+                        </p>
 
-                {/* Right Paragraph */}
-                <div className="md:w-1/2 animate__animated animate__fadeInRight">
-                    <h5 className="font-bold mb-2 text-center text-[#16243D] text-[20px]">Tech-Focused B2B Growth</h5>
-                    <p className="bg-gray-100 p-4 rounded text-[#606060]">
-                        RDIGS enables B2B technology companies to increase global reach and engagement. We do the heavy lifting to realize your deeply specific marketing needs, with a professional mix of tactics, technologies, and a personal touch.
-                    </p>
-                </div>
-            </div>
+                        <p className="text-gray-500 text-[1.1rem] leading-relaxed">
+                            Our difference lies in how we connect visibility, timing, and value
+                            across the entire buying journey.
+                        </p>
+                    </div>
 
-            {/* Second Row */}
-            <div className="flex justify-center mt-7 mb-12 animate__animated animate__fadeInUp">
-                <div className="md:w-2/3 text-center">
-                    <h5 className="font-bold mb-2 text-[#16243D] text-[20px]">Efficient, Scalable B2B Solutions</h5>
-                    <p className="bg-gray-100 p-4 rounded text-[#606060]">
-                        Since 2016, we have served to lead B2B technology companies, media agencies, and publishers globally. We offer a deeper level of relationship and operational efficiency in order to realize your customer acquisition requirements.
-                    </p>
+                    {/* Points Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Point 1 */}
+                        <div className="animate__animated animate__fadeInLeft">
+                            <div className="p-6 h-full bg-gray-100 rounded shadow-sm">
+                                <h4 className="text-2xl text-[#3099D5] font-semibold mb-3">
+                                    1. Beyond the Lead
+                                </h4>
+                                <p className="text-base text-gray-800 leading-relaxed">
+                                    We don’t see a form fill or a download as the finish line. Our
+                                    approach builds ongoing visibility so your brand becomes
+                                    familiar, trusted, and front of mind when the buyer is ready to
+                                    take the next step.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Point 2 */}
+                        <div className="animate__animated animate__fadeInRight">
+                            <div className="p-6 h-full bg-gray-100 rounded shadow-sm">
+                                <h4 className="text-2xl text-[#3099D5] font-semibold mb-3">
+                                    2. Verified and Insight-Rich
+                                </h4>
+                                <p className="text-base text-gray-800 leading-relaxed">
+                                    Every lead we deliver is verified and enriched with deeper
+                                    insight. This helps your marketing and sales teams focus on the
+                                    right accounts, improving engagement quality and conversion
+                                    potential.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Point 3 */}
+                        <div className="animate__animated animate__fadeInLeft">
+                            <div className="p-6 h-full bg-gray-100 rounded shadow-sm">
+                                <h4 className="text-2xl text-[#3099D5] font-semibold mb-3">
+                                    3. Consistent, Intent-Driven Visibility
+                                </h4>
+                                <p className="text-base text-gray-800 leading-relaxed">
+                                    We blend intent data with display campaigns to make sure your
+                                    message lands repeatedly and memorably. This consistent exposure
+                                    reinforces your value proposition and strengthens brand recall
+                                    across every stage of the funnel.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Point 4 */}
+                        <div className="animate__animated animate__fadeInRight">
+                            <div className="p-6 h-full bg-gray-100 rounded shadow-sm">
+                                <h4 className="text-2xl text-[#3099D5] font-semibold mb-3">
+                                    4. Outcome-Focused Growth
+                                </h4>
+                                <p className="text-base text-gray-800 mb-3 leading-relaxed">
+                                    Our programmes are designed to create commercial impact —
+                                    helping your brand achieve stronger awareness, deeper
+                                    engagement, and higher-quality pipeline.
+                                </p>
+                                <p className="text-base font-semibold italic text-gray-800">
+                                    Because demand generation isn’t about who clicks first, it’s
+                                    about who buyers remember when it counts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
             {/* Top Categories */}
             <div className="text-center py-3 mb-6">
@@ -198,13 +258,13 @@ export default function HomeSection() {
             </div>
 
             {/* FAQs */}
-            <FaqAccordion
+            {/* <FaqAccordion
                 title="Streamlined Leads and Magnifying Growth"
                 faqs={aboutFaqs}
                 description="We use a data-driven strategy to ensure that our methods are based on
                 the most recent market trends and insights, giving our customers an
                 advantage over their competitors."
-            />
+            /> */}
 
         </div>
     );

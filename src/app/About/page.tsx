@@ -17,19 +17,19 @@ const cards = [
         id: 1,
         title: 'Our Mission',
         image: '/about/Mission.png',
-        text: 'Our goal is to help businesses grow by generating new B2B leads, nurturing existing ones, and driving ROI.',
+        text: 'To help B2B brands generate leads that last, by combining data, insight, and visibility to keep your brand remembered throughout the buying journey.',
     },
     {
         id: 2,
         title: 'Our Vision',
         image: '/about/Vision.png',
-        text: 'Our goal is to help businesses grow by generating new B2B leads, nurturing existing ones, and driving ROI.',
+        text: 'To redefine demand generation by bridging the gap between awareness and action, helping businesses stay recognised and relevant when their buyers are ready to buy.',
     },
     {
         id: 3,
         title: 'Our Value',
         image: '/about/Value.png',
-        text: 'Our goal is to help businesses grow by generating new B2B leads, nurturing existing ones, and driving ROI.',
+        text: 'We believe in quality, transparency, and relevance. Every campaign we run is designed to deliver verified leads, meaningful engagement, and brand recognition that drives smarter growth.',
     },
 ]
 
@@ -54,13 +54,6 @@ const teamMembers = [
         img: "/team/sharad-salve.png",
         linkedin: "https://www.linkedin.com/in/sharad-salve-0058617b/",
         delay: 0.6,
-    },
-    {
-        name: "William Mathurai",
-        role: "Chief Revenue Officer",
-        img: "/team/Will-1.png",
-        linkedin: "https://www.linkedin.com/in/william-k-m-12189737/",
-        delay: 0.10,
     },
     {
         name: "Neal Brooker",
@@ -94,26 +87,26 @@ const teamMembers = [
 
 const aboutFaqs = [
     {
-      question: '1. High-Quality Leads',
-      answer:
-        'We supply our prospects with high-quality leads adapted to their unique requirements...',
+        question: '1. High-Quality Leads',
+        answer:
+            'We supply our prospects with high-quality leads adapted to their unique requirements...',
     },
     {
-      question: '2. Innovative Strategies',
-      answer:
-        'We employ cutting-edge techniques and technologies to ensure our clients stay ahead...',
+        question: '2. Innovative Strategies',
+        answer:
+            'We employ cutting-edge techniques and technologies to ensure our clients stay ahead...',
     },
     {
-      question: '3. Customized Solutions',
-      answer:
-        'We ensure that our prospects get the most bang for their buck by providing individualized services...',
+        question: '3. Customized Solutions',
+        answer:
+            'We ensure that our prospects get the most bang for their buck by providing individualized services...',
     },
     {
-      question: '4. Data-Driven Approach',
-      answer:
-        'We use a data-driven strategy to ensure that our methods are based on the most recent market trends...',
+        question: '4. Data-Driven Approach',
+        answer:
+            'We use a data-driven strategy to ensure that our methods are based on the most recent market trends...',
     },
-  ]
+]
 
 export default function AboutUs() {
     return (
@@ -125,15 +118,7 @@ export default function AboutUs() {
                     <div className="flex flex-col justify-center px-6">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
                         <p className="text-gray-600 text-lg leading-relaxed">
-                            RDIGS was founded by a group of individuals who all came from sales
-                            and B2B lead generation backgrounds and brought 15+ years of
-                            experience to the table. They noticed a significant gap in the
-                            market and were determined to eliminate it. Despite being
-                            technology-driven, the company values the importance of human
-                            connection and ensures every client receives a personalized
-                            experience. At RDIGS, we pride ourselves on our ability to bridge
-                            the gap between technology and human interaction to provide
-                            exceptional lead generation services.
+                            Founded in 2016, RD Info Global Solutions (RDIGS) was built by a team of B2B sales and marketing professionals with a shared goal: to raise the standard of lead and demand generation. From day one, the focus has been on delivering verified, high-quality leads that help clients achieve meaningful growth. Over time, our experience revealed an industry-wide challenge — generating leads isn’t enough if buyers don’t remember your brand when they are ready to buy. That insight has shaped how we work today. We now focus on building brand recall through consistent visibility, so your audience not only remembers your name but also recognises how you can help them solve their business problems.
                         </p>
                     </div>
 
@@ -158,18 +143,9 @@ export default function AboutUs() {
                     {/* Left container (Content) */}
                     <div className="flex flex-col justify-center">
                         <div className="px-6">
-                            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Beginning</h1>
+                            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Approach</h1>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                                Our journey started in 2016 and since then we have been one of the
-                                fastest-growing global providers of B2B lead and demand generation
-                                company. Over the years, we have become pioneers in our industry.
-                                We work closely with our clients to understand their unique needs
-                                and deliver customized solutions that meet and exceed expectations.
-                                We believe in adapting to new technologies and utilizing
-                                data-driven insights to serve our clients better. Our team is backed
-                                by technology that enables us to deliver results consistently. Our
-                                services are supplied with a human touch to ensure our clients
-                                receive individualized services tailored to their needs.
+                                Not every lead is at the same stage of the buying journey. Some are still exploring, others are evaluating, and only a few are ready to buy right now. Research shows that B2B buyers are often more than 70% of the way through their decision process before they speak to a salesperson. That’s why visibility and timing matter as much as data and intent. If your brand isn’t seen and remembered multiple times throughout that journey, even the best leads can lose momentum. When those buyers are finally ready to act, they’ll engage with the brand they recognise and trust. At RD Info Global Solutions (RDIGS), we design programmes that keep your brand front of mind at every stage — combining verified data, intent insights, and consistent visibility to turn early interest into meaningful engagement when it counts.
                             </p>
                         </div>
                     </div>
@@ -192,7 +168,6 @@ export default function AboutUs() {
                             ))}
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -291,14 +266,14 @@ export default function AboutUs() {
                 </div>
             </div>
 
-            <FaqAccordion
+            {/* <FaqAccordion
       title="Streamlined Leads and Magnifying Growth"
       faqs={aboutFaqs}
       description="We use a data-driven strategy to ensure that our methods are based on
           the most recent market trends and insights, giving our customers an
           advantage over their competitors."
-    />
-            
+    /> */}
+
         </>
     )
 }
