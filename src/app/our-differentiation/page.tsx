@@ -7,28 +7,28 @@ import FaqAccordion from '@/component/FaqAccordian/page';
 
 const aboutFaqs = [
     {
-        question: "What sets RDIGS apart from other B2B marketing and advertising agencies?",
-        answer: "RDIGS stands out through our deep focus on lead and demand generation, combining tailored strategies with advanced data analytics to deliver measurable results. We ensure each campaign aligns with our client’s specific business goals, fostering long-term relationships and consistently high-quality outcomes."
+        question: "What makes RDIGS different from other lead generation providers?",
+        answer: "We go beyond capturing intent signals. Our approach ensures your brand is remembered throughout the buying journey, not just at the first click. By combining verified data, intent insights, and consistent display visibility, we help you stay top of mind until your buyers are ready to act."
     },
     {
-        question: "How does RDIGS approach client relationships?",
-        answer: "At RDIGS, we prioritize transparent communication, collaboration, and a partnership approach. We take the time to truly understand our clients’ needs, offering personalized services and continuous feedback loops, ensuring their expectations are met at every stage of the campaign."
+        question: "Do you only work on top-of-funnel campaigns?",
+        answer: "No. We support clients across the full funnel, from awareness to mid- and lower-funnel activation. Our focus is always on helping your brand stay visible and recognised at every stage, so when prospects are ready, they already know who you are."
     },
     {
-        question: "How do you ensure the effectiveness of your lead generation campaigns?",
-        answer: "We leverage cutting-edge tools and data-driven insights to create highly-targeted campaigns. Our team monitors performance closely, making real-time adjustments to optimize results and ensure we are capturing high-quality leads that convert to sales-ready opportunities."
+        question: "How do you ensure lead quality?",
+        answer: "Every lead we deliver is verified and enriched with firmographic and intent data. This means your sales team spends more time with high-fit accounts that already know your brand, not cold, unqualified names."
     },
     {
-        question: "What kind of industries does RDIGS specialize in?",
-        answer: "RDIGS specializes in lead and demand generation services, providing tailored strategies that drive high-quality leads and business growth. Our expertise spans a range of industries, including technology, finance, healthcare, and e-commerce."
+        question: "Do you use intent signals?",
+        answer: "Yes, we do. We have access to leading intent tools, but we are careful about how we use them because not all intent signals are equal. What matters most is understanding the context behind those signals. We analyse the types of actions that generated the intent and study how different audiences have historically responded. We also run regular surveys to understand what our audiences are genuinely interested in, helping us separate real buying intent from surface-level engagement."
     },
     {
-        question: "How does RDIGS stay ahead of trends in digital marketing?",
-        answer: "We are committed to continuous innovation and staying at the forefront of digital marketing. Our team regularly participates in industry events, conducts research, and experiments with emerging technologies to ensure we are using the latest trends and tools to maximize client success."
+        question: "What kind of clients or industries do you work with?",
+        answer: "We partner with B2B organisations where brand visibility and lead quality matter, including technology, SaaS, professional services, and manufacturing. Our model adapts to your buying cycle, no matter how complex."
     },
     {
-        question: "What is your approach to social media marketing, and how do you tailor it for B2B clients?",
-        answer: "RDIGS adopts a strategic, content-driven approach to social media marketing, focusing on building brand authority and generating high-quality engagement. We develop customized content plans based on each client's objectives, ensuring their messaging resonates with their target B2B audience and drives tangible results."
+        question: "How do you generate your leads?",
+        answer: "It depends on the type of lead and where it sits in the funnel. For top-of-funnel campaigns, we use a combination of email and display advertising to drive awareness and engagement. For mid- and lower-funnel activity, our experienced telemarketing team helps deliver qualified leads ready for deeper conversations. We are always transparent about how each campaign is run, and for programmes involving telemarketing, we provide full call recordings so you can review quality and compliance with confidence."
     },
 ]
 
@@ -141,7 +141,7 @@ export default function HomeSection() {
             </section>
 
             {/* Top Categories */}
-            <div className="text-center py-3 mb-6">
+            {/* <div className="text-center py-3 mb-6">
                 <div className="mx-auto max-w-3xl mb-8">
                     <h1 className="text-[#3099D5] text-[2.5rem] font-bold mb-2">
                         Top Categories
@@ -169,9 +169,9 @@ export default function HomeSection() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
             {/* Image + About Sections */}
-            <div className="flex flex-col xl:flex-row gap-8 mt-10 mb-10">
+            {/* <div className="flex flex-col xl:flex-row gap-8 mt-10 mb-10">
                 <div className="xl:w-1/2 flex justify-center animate__animated animate__fadeInLeft">
                     <div className="w-4/5 h-[350px] relative">
                         <Image
@@ -193,9 +193,9 @@ export default function HomeSection() {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="flex flex-col xl:flex-row gap-8 mb-12">
+            {/* <div className="flex flex-col xl:flex-row gap-8 mb-12">
                 <div className="xl:w-1/2 flex animate__animated animate__fadeInLeft">
                     <div className="bg-white p-8 w-full flex flex-col justify-center">
                         <h4 className="text-[#3099D5] text-[24px] mb-2">Why Use Us</h4>
@@ -220,17 +220,17 @@ export default function HomeSection() {
                         />
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Core Features */}
-            <div className="text-center mx-auto pb-4 animate__animated animate__fadeInUp animate__delay-200ms" style={{ maxWidth: '921px' }}>
+            {/* <div className="text-center mx-auto pb-4 animate__animated animate__fadeInUp animate__delay-200ms" style={{ maxWidth: '921px' }}>
                 <h1 className="text-[#3099D5] text-4xl md:text-5xl font-bold mb-2">Core Features</h1>
                 <h4 className="text-[#606060] text-[24px] mb-2">
                     We stand out by generating HQLs and MQLs within hours of launching a campaign
                 </h4>
-            </div>
+            </div> */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 {[
                     { img: 'Goal-oriented-B2B-technology-marketing-solutions.png', title: 'Goal-oriented B2B technology marketing solutions' },
                     { img: 'Customised,-Flexible-and-risk-free-engagement.png', title: 'Customised, Flexible and risk-free engagement' },
@@ -255,16 +255,16 @@ export default function HomeSection() {
                         <h5 className="mt-5">{card.title}</h5>
                     </div>
                 ))}
-            </div>
+            </div> */}
 
             {/* FAQs */}
-            {/* <FaqAccordion
+            <FaqAccordion
                 title="Streamlined Leads and Magnifying Growth"
                 faqs={aboutFaqs}
                 description="We use a data-driven strategy to ensure that our methods are based on
                 the most recent market trends and insights, giving our customers an
                 advantage over their competitors."
-            /> */}
+            />
 
         </div>
     );
