@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function B2BLeadGeneration() {
+export default function B2BSDRASASERVICE() {
   const steps = [
     {
       id: 1,
