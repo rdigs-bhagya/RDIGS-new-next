@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+}
 
 :root {
   --font-dm-sans: 'DM Sans', sans-serif;
@@ -6,10 +11,24 @@
   --foreground: #171717;
 }
 
+html,
+body,
+*,
+*::before,
+*::after,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'DM Sans', sans-serif !important;
+}
+
 body {
-  font-family: var(--font-dm-sans), 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #171717;
   background-color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 
 

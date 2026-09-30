@@ -76,6 +76,8 @@ export default function IntentBasedMarketing() {
                 </div>
             </div>
 
+
+
             <div
                 className="text-center mx-auto pb-5 wow fadeInUp"
                 data-wow-delay="0.2s"
@@ -190,6 +192,64 @@ export default function IntentBasedMarketing() {
                             fill
                             className="object-contain"
                         />
+                    </div>
+                </div>
+            </div>
+            
+            {/* ================= APPROACH SECTION ================= */}
+            <div className="py-12 md:py-16 text-center">
+                <div className="max-w-6xl mx-auto px-4">
+                    <p className="text-[#3099D5] text-[20px] md:text-[22px] font-semibold mb-2">
+                        Approach
+                    </p>
+                    <h2 className="text-[36px] md:text-[50px] font-bold text-[#16243d] mb-12 tracking-tight">
+                        How Do We Make ABM Work
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                        {/* CARD 1 */}
+                        <div className="bg-white rounded-[24px] border border-gray-100 shadow-[0_4px_25px_rgba(0,0,0,0.04)] p-8 lg:p-10 flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl hover:border-[#3099D5]/30 cursor-pointer">
+                            <div className="w-16 h-16 flex items-center justify-center mb-6">
+                                <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#5F6B7A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect x="5" y="3" width="14" height="18" rx="3" />
+                                    <path d="M10 3h4" />
+                                    <circle cx="12" cy="10" r="2.5" />
+                                    <path d="M8.5 16.5c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5" />
+                                </svg>
+                            </div>
+                            <p className="text-[#16243d] text-[17px] md:text-[18px] font-medium leading-snug">
+                                We recognise key accounts
+                            </p>
+                        </div>
+
+                        {/* CARD 2 */}
+                        <div className="bg-white rounded-[24px] border border-gray-100 shadow-[0_4px_25px_rgba(0,0,0,0.04)] p-8 lg:p-10 flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl hover:border-[#3099D5]/30 cursor-pointer">
+                            <div className="w-16 h-16 flex items-center justify-center mb-6">
+                                <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#5F6B7A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M3 4v16a1 1 0 0 0 1 1h16" />
+                                    <path d="M7 15l4-5 3 3 5-6" />
+                                    <path d="M15 7h4v4" />
+                                </svg>
+                            </div>
+                            <p className="text-[#16243d] text-[17px] md:text-[18px] font-medium leading-snug">
+                                We track lead behaviour
+                            </p>
+                        </div>
+
+                        {/* CARD 3 */}
+                        <div className="bg-white rounded-[24px] border border-gray-100 shadow-[0_4px_25px_rgba(0,0,0,0.04)] p-8 lg:p-10 flex flex-col items-center justify-center text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl hover:border-[#3099D5]/30 cursor-pointer">
+                            <div className="w-16 h-16 flex items-center justify-center mb-6">
+                                <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#5F6B7A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M12 4C6.48 4 2 7.8 2 12.5c0 2.2 1 4.2 2.7 5.7L4 21l3.8-1.3c1.3.5 2.7.8 4.2.8 5.52 0 10-3.8 10-8.5S17.52 4 12 4z" />
+                                    <circle cx="8.5" cy="12.5" r="1" fill="#5F6B7A" />
+                                    <circle cx="12" cy="12.5" r="1" fill="#5F6B7A" />
+                                    <circle cx="15.5" cy="12.5" r="1" fill="#5F6B7A" />
+                                </svg>
+                            </div>
+                            <p className="text-[#16243d] text-[17px] md:text-[18px] font-medium leading-snug">
+                                We qualify & engage leads
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

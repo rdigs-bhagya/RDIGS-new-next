@@ -74,27 +74,27 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 p-4">
                     {cards.map((card, i) => (
                         <div
                             key={i}
-                            className="bg-white border-0 shadow-md rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg"
+                            className="group bg-white border border-gray-100 shadow-md rounded-xl overflow-hidden transition-all duration-300 transform hover:-translate-y-2.5 hover:shadow-2xl cursor-pointer"
                         >
                             <div className="flex items-center">
-                                {/* Left Image with Zoom + Grayscale Hover */}
-                                <div className="w-1/3 flex justify-center items-center overflow-hidden">
+                                {/* Left Image with Grayscale to Color on Card Hover */}
+                                <div className="w-1/3 flex justify-center items-center overflow-hidden p-3">
                                     <Image
                                         src={card.img}
                                         alt={card.title}
                                         width={300}
                                         height={300}
-                                        className="rounded-l-lg w-[90%] h-full object-cover filter grayscale transition-all duration-500 hover:grayscale-0 hover:scale-105"
+                                        className="rounded-lg w-[90%] h-full object-cover filter grayscale transition-all duration-500 ease-out group-hover:grayscale-0"
                                     />
                                 </div>
 
                                 {/* Right Content */}
                                 <div className="w-2/3 p-4">
-                                    <h4 className="text-lg font-semibold mb-3 text-[#212529]">
+                                    <h4 className="text-[500] text-[24px] text-leading-[29px] font-semibold mb-3 text-[#212529] group-hover:text-[#3099D5] transition-colors duration-300">
                                         {card.title}
                                     </h4>
                                     <a

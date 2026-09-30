@@ -213,7 +213,7 @@ const Navbar = () => {
                     <Link href="/strategies/intent-based-marketing" onClick={closeAll} className={dropdownLinkBase}>
                       Intent-Based Marketing
                     </Link>
-                    <Link href="/Services" onClick={closeAll} className={dropdownLinkBase}>
+                    <Link href="/strategies/event-based-marketing" onClick={closeAll} className={dropdownLinkBase}>
                       Event-Based Marketing
                     </Link>
                   </div>
@@ -251,7 +251,7 @@ const Navbar = () => {
                     <Link href="/blogs" onClick={closeAll} className={dropdownLinkBase}>
                       Blogs
                     </Link>
-                    <Link href="/Services" onClick={closeAll} className={dropdownLinkBase}>
+                    <Link href="/events" onClick={closeAll} className={dropdownLinkBase}>
                       Events
                     </Link>
                   </div>
@@ -260,7 +260,7 @@ const Navbar = () => {
 
               {/* Contact Link */}
               <li>
-                <Link href="/About" onClick={closeAll} className={linkBase}>
+                <Link href="/contact" onClick={closeAll} className={linkBase}>
                   Contact
                 </Link>
               </li>
@@ -463,7 +463,7 @@ const Navbar = () => {
                   <Link href="/blogs" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
                     Blogs
                   </Link>
-                  <Link href="/Services" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
+                  <Link href="/events" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
                     Events
                   </Link>
                 </div>
@@ -471,9 +471,10 @@ const Navbar = () => {
             </li>
 
             {/* Mobile Contact */}
+
             <li className="pt-2">
               <Link
-                href="/About"
+                href="/contact"
                 onClick={closeAll}
                 className="block text-[#444444] font-semibold text-base py-1"
               >

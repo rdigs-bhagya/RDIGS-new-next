@@ -10,20 +10,20 @@ import Footer from '@/component/Footer/page';
 // Import Google Font via next/font/google
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '900'], // Light, Bold, Extra Bold
-  display: 'swap', // Prevents FOUT (flash of unstyled text)
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
   variable: '--font-dm-sans',
 });
 
 export const metadata = {
-  title: 'My App',
-  description: 'Using DM Sans with Next.js',
+  title: 'RDIGS',
+  description: 'RDIGS Digital Marketing & Demand Generation Services',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${dmSans.variable} font-sans`}>
+    <html lang="en" className={dmSans.className}>
+      <body className={`${dmSans.className} ${dmSans.variable}`}>
         <Topbar />
         <Navbar />
         {children}
