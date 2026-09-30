@@ -12,6 +12,7 @@ const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '900'], // Light, Bold, Extra Bold
   display: 'swap', // Prevents FOUT (flash of unstyled text)
+  variable: '--font-dm-sans',
 });
 
 export const metadata = {
@@ -22,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={dmSans.className}>
+      <body className={`${dmSans.variable} font-sans`}>
         <Topbar />
         <Navbar />
         {children}

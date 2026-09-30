@@ -4,46 +4,39 @@ import Image from 'next/image';
 
 export default function MediaDeckSection() {
   return (
-    <div className="py-6" style={{ paddingLeft: '2.75rem', paddingRight: '2.75rem' }}>
-      <div className="flex flex-col md:flex-row">
-
-        {/* Left container (About Us content) */}
+    <section className="py-14 px-6 lg:px-14 bg-white border-t border-gray-50">
+      <div className="max-w-[1240px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Left container */}
         <div className="md:w-1/2 flex flex-col justify-center">
-          <div className="px-4 md:px-0">
-            <h1 className="mb-2" style={{ color: '#3099D5', fontSize: '2.5rem', fontWeight: '700' }}>
-              Our Strategy, Your Spotlight!
-            </h1>
-            <h4 className="text-dark" style={{ color: '#606060' , fontSize: '24px', fontWeight: '500'}}>
-              See How We Position B2B Brands for Maximum Reach and Revenue Impact.
-            </h4>
+          <h2 className="text-[#3099D5] text-3xl sm:text-4xl md:text-[40px] font-bold mb-2 tracking-tight">
+            Our Strategy, Your Spotlight!
+          </h2>
+          <p className="text-[#606060] font-medium text-[20px] sm:text-[22px] md:text-[24px] leading-snug mb-5">
+            See How We Position B2B Brands for Maximum Reach and Revenue Impact.
+          </p>
 
-            <button
-              className="mt-4 px-6 py-2"
-              style={{
-                color: 'white',
-                border: '1px solid white',
-                background: '#3099D5',
-              }}
-              data-bs-toggle="modal"
-              data-bs-target="#contactModal"
+          <div>
+            <a
+              href="/media-deck"
+              className="inline-block bg-[#3099D5] hover:bg-[#16243D] text-white font-medium text-[15px] sm:text-[16px] px-7 py-2.5 rounded-md shadow-sm transition-colors"
             >
               Download Now
-            </button>
+            </a>
           </div>
         </div>
 
         {/* Right container (Image) */}
-        <div className="md:w-1/2 flex justify-center items-center mt-6 md:mt-0">
+        <div className="md:w-1/2 flex justify-center items-center">
           <Image
             src="/home/corporatedeck.png"
-            alt="Corporate Deck"
-            width={500}
-            height={450}
-            className="object-contain"
+            alt="RDIGS Media Deck 2026"
+            width={450}
+            height={320}
+            className="w-full max-w-[420px] h-auto object-contain drop-shadow-md"
+            priority
           />
         </div>
-
       </div>
-    </div>
+    </section>
   );
 }

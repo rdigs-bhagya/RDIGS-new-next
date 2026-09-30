@@ -52,9 +52,9 @@ export default function FaqAccordion({
                 </div>
 
                 {/* Optional Bottom Description */}
-                {description && (
+                {/* {description && (
                     <p className="text-gray-700 mt-4 text-base">{description}</p>
-                )}
+                )} */}
             </div>
         </div>
     )

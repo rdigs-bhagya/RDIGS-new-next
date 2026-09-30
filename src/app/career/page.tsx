@@ -107,7 +107,7 @@ export default function CareerIntro() {
                 <h1 className="mb-2 text-[2.5rem] font-bold" style={{ color: "#3099D5" }}>
                     Explore Services
                 </h1>
-                
+
                 <h4 className=" text-[24px] font-semibold" style={{ color: "#606060" }}>
                     We’re Always Looking For Talented People
                 </h4>

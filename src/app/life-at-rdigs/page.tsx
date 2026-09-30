@@ -58,12 +58,12 @@ export default function LifeAtRDIGS() {
   ];
 
   const events = [
-    { img: "/life-at-rdigs/e1.webp", title: "Team Outing 2023" },
-    { img: "/life-at-rdigs/e2.webp", title: "Trip 2023" },
-    { img: "/life-at-rdigs/e3.webp", title: "Annual Day 2023" },
-    { img: "/life-at-rdigs/e4.webp", title: "Independence Day 2023" },
-    { img: "/life-at-rdigs/e5.webp", title: "Women's Day 2023" },
-    { img: "/life-at-rdigs/e6.webp", title: "New Year 2023" },
+    { img: "/life-at-rdigs/e1.webp", title: "Team Outing" },
+    { img: "/life-at-rdigs/e2.webp", title: "Trip" },
+    { img: "/life-at-rdigs/e3.webp", title: "Annual Day" },
+    { img: "/life-at-rdigs/e4.webp", title: "Independence Day" },
+    { img: "/life-at-rdigs/e5.webp", title: "Women's Day" },
+    { img: "/life-at-rdigs/e6.webp", title: "New Year" },
   ]
 
   return (
@@ -76,28 +76,26 @@ export default function LifeAtRDIGS() {
               <div className="bg-white rounded p-12 h-full">
                 <h4 className="text-[#3099D5] text-[24px] mb-2">Life At RDIGS</h4>
                 <h1 className="text-[56px] leading-[67px] font-[700] mb-4">
-                  RDIGS Where Employees Thrive Together
+                  A Place to Grow, Contribute, and Belong
                 </h1>
 
                 <p className="text-[#606060] mb-6">
-                  At RDIGS, we foster an employee-centric environment where every team member is valued as part of our family.
-                  We stand by the belief that &quot;Employees are the voice of every organization.&quot; Our commitment goes beyond just work—we strive to
-                  excel in everything we do, whether it&apos;s achieving professional milestones or creating memorable moments of fun.
+                  At RD Info Global Solutions (RDIGS), we believe people thrive when they’re trusted to take ownership, share ideas, and see the real impact of their work. Our teams bring together diverse skills and perspectives to solve complex challenges for our clients — and we make sure every success is shared. Growth at RDIGS means more than progression. It means learning from experience, experimenting with new ideas, and collaborating across teams to create smarter solutions. We value openness, accountability, and curiosity — the qualities that help us move forward together.
                 </p>
 
                 {/* Counters */}
-                <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <h2 className="text-[#3099D5] font-bold mb-0 text-[2rem]">100+</h2>
-                    <p className="text-[#000000] font-bold text-[16px] mb-0">Team Members</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-2">
+                  <div className="flex flex-row items-center justify-center md:justify-start gap-2">
+                    <h2 className="text-[#3099D5] font-bold mb-0 text-[2rem] lg:text-[2rem] leading-none">60+</h2>
+                    <p className="text-[#16243D] font-bold text-[13px] lg:text-[13px] leading-tight mb-0 text-left">Team<br />Members</p>
                   </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h2 className="text-[#3099D5] font-bold mb-0 text-[2rem]">12+</h2>
-                    <p className="text-[#000000] font-bold text-[16px] mb-0">Years of Experience</p>
+                  <div className="flex flex-row items-center justify-center md:justify-start gap-2">
+                    <h2 className="text-[#3099D5] font-bold mb-0 text-[2rem] lg:text-[2rem] leading-none">10+</h2>
+                    <p className="text-[#16243D] font-bold text-[13px] lg:text-[13px] leading-tight mb-0 text-left">Years of<br />Experience</p>
                   </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h2 className="text-[#3099D5] font-bold mb-0 text-[2rem]">8+</h2>
-                    <p className="text-[#000000] font-bold text-[16px] mb-0">Projects Completed</p>
+                  <div className="flex flex-row items-center justify-center md:justify-start gap-2">
+                    <h2 className="text-[#3099D5] font-bold mb-0 text-[2rem] lg:text-[2rem] leading-none">7093+</h2>
+                    <p className="text-[#16243D] font-bold text-[13px] lg:text-[13px] leading-tight mb-0 text-left">Projects<br />Completed</p>
                   </div>
                 </div>
               </div>
@@ -122,6 +120,50 @@ export default function LifeAtRDIGS() {
           </div>
         </div>
       </div>
+      {/* How We Work Section */}
+      <div className="py-12 px-6 md:px-12 bg-white">
+        <div className="text-center mb-10">
+          <h4 className="text-[#3099D5] text-[24px] mb-3 font-semibold">How We Work</h4>
+          <p className="max-w-4xl mx-auto text-gray-500 text-[15px] md:text-[16px]">
+            Our culture is built on shared values that define how we collaborate, grow, and succeed together.
+          </p>
+        </div>
+
+        <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Card 1 */}
+          <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-gray-50 p-8 text-center flex flex-col items-center">
+            <h5 className="font-bold text-[#16243D] text-[18px] mb-4">Growth Mindset</h5>
+            <p className="text-gray-500 text-[14px] leading-relaxed">
+              We encourage continuous learning, creative thinking, and ownership at every level. Everyone is supported to stretch their skills and take on new challenges.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-gray-50 p-8 text-center flex flex-col items-center">
+            <h5 className="font-bold text-[#16243D] text-[18px] mb-4">Collaboration</h5>
+            <p className="text-gray-500 text-[14px] leading-relaxed">
+              We work as one team, across functions and regions, sharing knowledge and celebrating success together.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-gray-50 p-8 text-center flex flex-col items-center">
+            <h5 className="font-bold text-[#16243D] text-[18px] mb-4">Integrity</h5>
+            <p className="text-gray-500 text-[14px] leading-relaxed">
+              Transparency and honesty shape how we work with clients and with each other. We keep our promises and own our results.
+            </p>
+          </div>
+
+          {/* Card 4 */}
+          <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-gray-50 p-8 text-center flex flex-col items-center">
+            <h5 className="font-bold text-[#16243D] text-[18px] mb-4">Recognition</h5>
+            <p className="text-gray-500 text-[14px] leading-relaxed">
+              We celebrate contributions that make a difference — whether it&apos;s a new idea, a great client outcome, or a team achievement.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="py-8 px-12">
         <div className="text-center mb-10">
           <h4 className="text-[#3099D5] text-[24px] mb-2 font-semibold">Benefits At RDIGS</h4>
@@ -157,8 +199,11 @@ export default function LifeAtRDIGS() {
         {/* Section Heading */}
         <div className="mb-8">
           <h4 className="text-[#3099D5] text-[24px] mb-2 text-center font-semibold">
-            Our Event&apos;s
+            Our Team in Action
           </h4>
+          <p className="max-w-4xl mx-auto text-gray-500 text-[15px] md:text-[16px]">
+            From company milestones to team days and celebrations, life at RDIGS is built around connection and shared purpose.
+          </p>
         </div>
 
         {/* Events Grid */}

@@ -1,8 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 export default function TestimonialCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -27,13 +29,13 @@ export default function TestimonialCarousel() {
         text: `Our partnership with RDIGS has been outstanding, and they have now become our top partner in terms of both volume and quality. Thanks to their efforts, we have seen a 5% increase in conversion rates from partner media in our Sales-Ready Leads offering. RDIGS has played a pivotal role in this success.`,
         role: 'Director - Inventory & Analytics',
         logo: '/client-feedback/Wheelhouse (3).png',
-        alt: 'Salesforce Logo',
+        alt: 'Wheelhouse Logo',
       },
       {
         text: `We have developed a great partnership with RDIGS. Their dedication to making our partnership fruitful has been evident since its inception. They have helped us fulfill client demands across different verticals while keeping quantity and quality at a high level. We appreciate their efforts and commitment to getting demands done and done on time. You guys rock. Thank you so much for doing a great job and keeping our partnership successful!`,
         role: 'Strategic Customer Success Manager',
         logo: '/client-feedback/Inside-2 (1).png',
-        alt: 'Zoom Logo',
+        alt: 'Inside Logo',
       },
     ],
   ];
@@ -46,70 +48,75 @@ export default function TestimonialCarousel() {
     setActiveIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="container mx-auto my-12 px-6">
-      {/* Heading */}
-      <div className="text-center mb-6">
-        <h1 className="text-[#3099D5] text-[2.5rem] font-bold mb-2">
-          Their Experience, Our Pride!!
-        </h1>
-        <h4 className="text-[#606060] font-medium text-[24px] leading-[29px]">
-          See What Our Clients Are Saying About Their Growth Journey
-        </h4>
-      </div>
+    <section className="bg-transparent w-full">
+      <div className="max-w-[1240px] mx-auto">
+        {/* Carousel Container */}
+        <div className="relative px-2 md:px-10">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+            >
+              {slides[activeIndex].map((slide, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#F8F9FA] rounded-2xl p-6 sm:p-7 flex flex-col justify-between border border-gray-100 shadow-sm min-h-[300px]"
+                >
+                  {/* Text Section */}
+                  <div>
+                    <p className="text-[#212529] text-[14px] sm:text-[15px] leading-relaxed mb-4">
+                      {slide.text}
+                    </p>
+                    <p className="text-[#3099D5] font-semibold text-[15px] sm:text-[16px]">
+                      {slide.role}
+                    </p>
+                  </div>
 
-      {/* Carousel */}
-      <div className="relative">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeIndex}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-wrap justify-center gap-6"
+                  {/* Logo at bottom-right */}
+                  <div className="mt-5 flex justify-end">
+                    <Image
+                      src={slide.logo}
+                      alt={slide.alt}
+                      width={160}
+                      height={70}
+                      priority={true}
+                      className="h-12 sm:h-14 w-auto object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navigation Arrows */}
+          <button
+            aria-label="Previous Slide"
+            className="absolute left-0 top-1/2 -translate-y-1/2 text-[#3099D5] hover:text-[#16243D] p-2 transition-colors hidden md:block"
+            onClick={handlePrev}
           >
-            {slides[activeIndex].map((slide, idx) => (
-              <div
-                key={idx}
-                className="w-full md:w-[45%] bg-white rounded-lg p-6 shadow-md flex flex-col justify-between"
-                style={{ height: '400px' }} // Fixed height
-              >
-                {/* Text Section */}
-                <div>
-                  <p className="text-[#212529] mb-4">{slide.text}</p>
-                  <p className="text-[#3099D5] font-semibold">{slide.role}</p>
-                </div>
-
-                {/* Logo at bottom-right */}
-                <div className="mt-4 flex justify-end">
-                  <Image
-                    src={slide.logo}
-                    alt={slide.alt}
-                    width={120}
-                    height={60}
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Navigation */}
-        <button
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#3099D5] text-white p-2 rounded-full hover:bg-[#258AC5] hidden lg:flex"
-          onClick={handlePrev}
-        >
-          &#10094;
-        </button>
-        <button
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#3099D5] text-white p-2 rounded-full hover:bg-[#258AC5] hidden lg:flex"
-          onClick={handleNext}
-        >
-          &#10095;
-        </button>
+            <FaChevronLeft className="text-2xl" />
+          </button>
+          <button
+            aria-label="Next Slide"
+            className="absolute right-0 top-1/2 -translate-y-1/2 text-[#3099D5] hover:text-[#16243D] p-2 transition-colors hidden md:block"
+            onClick={handleNext}
+          >
+            <FaChevronRight className="text-2xl" />
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

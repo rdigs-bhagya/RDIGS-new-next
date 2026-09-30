@@ -6,10 +6,26 @@ import Image from 'next/image'
 import { FaLinkedinIn } from 'react-icons/fa'
 
 const timeline = [
-    { year: '2016–2018', text: 'Our journey started in 2016 and since then we have been one of the' },
-    { year: '2019–2021', text: 'Our journey started in 2016 and since then we have been one of the' },
-    { year: '2022–2024', text: 'Our journey started in 2016 and since then we have been one of the' },
-    { year: '2025', text: 'Our journey started in 2016 and since then we have been one of the' },
+    {
+        year: '2016–2018',
+        title: 'Foundation & Growth:',
+        text: ' RDIGS was established with a vision to deliver quality B2B lead generation and marketing solutions. During these years, we built our core team, processes, and client relationships.'
+    },
+    {
+        year: '2019–2021',
+        title: 'Expansion & Innovation:',
+        text: ' We expanded our service portfolio, strengthened our market presence, and embraced innovative marketing strategies to deliver greater value to our clients.'
+    },
+    {
+        year: '2022–2024',
+        title: 'Scaling Success:',
+        text: ' With a growing global client base, we enhanced our capabilities in demand generation, digital marketing, and customer acquisition while achieving significant business growth.'
+    },
+    {
+        year: '2025',
+        title: 'Driving the Future:',
+        text: ' Focused on innovation, technology, and client success, RDIGS continues to evolve as a trusted partner for businesses seeking scalable marketing and lead generation solutions.'
+    },
 ]
 
 const cards = [
@@ -57,7 +73,7 @@ const teamMembers = [
     },
     {
         name: "Neal Brooker",
-        role: "Fractional Sales Director, EMEA",
+        role: "Fractional Sales Director",
         img: "/team/Nial-7.png",
         linkedin: "https://www.linkedin.com/in/brookerneal/",
         delay: 0.12,
@@ -156,13 +172,15 @@ export default function AboutUs() {
                             {timeline.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="timeline-entry w-full"
+                                    className="timeline-entry w-full mb-4"
                                 >
-                                    <span className="year-pill w-[120px] text-center inline-block bg-[#3099D5] text-white text-[14px] font-semibold px-5 py-2 rounded-sm text-sm">
-                                        {item.year}
-                                    </span>
-                                    <p className="text-gray-600 text-lg leading-relaxed">
-                                        {item.text}
+                                    <div className="mb-3">
+                                        <span className="year-pill inline-block bg-[#2CB7D4] text-white text-[16px] md:text-[18px] font-bold px-6 py-2 rounded-xl">
+                                            {item.year}
+                                        </span>
+                                    </div>
+                                    <p className="text-gray-600 text-[13px] md:text-[13px] leading-relaxed">
+                                        <strong className="text-gray-800 font-bold">{item.title}</strong>{item.text}
                                     </p>
                                 </div>
                             ))}

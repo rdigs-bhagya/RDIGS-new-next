@@ -7,28 +7,28 @@ import { motion } from 'framer-motion'
 export default function ServicesPage() {
     const service = [
         {
-            id: 'b2b-lead-generation',
-            title: 'B2B Lead Generation',
-            image: '/Services/b2bleadgeneration.png',
-            description: "Empower Your Sales Team and Drive Results with RDIGS’ Account-Based Marketing Services"
-        },
-        { 
-            id: 'b2b-advertising', 
-            title: 'B2B Advertising',
-            image: '/Services/B2B-Advertising (1).png',
-            description: "Drive Sustainable Growth for Your Sales and Marketing Efforts with Data-Driven Strategies"
+            id: 'demand-amplifier',
+            title: 'Demand Amplifier',
+            image: '/Services/abm.jpg',
+            description: "Demand Generation That Actually Converts—Not Just Fills Your CRM"
         },
         {
-            id: 'b2b-sdr-as-a-service', 
-            title: 'B2B SDR as a Service',
-            image: '/Services/B2B-SDR-as-a-Service.png',
-            description: "Unlock the Power of Precision Marketing with RDIGS’ Intent-Based Marketing Services"
+            id: 'account-based-marketing',
+            title: 'ABM Services',
+            image: '/Services/dmeand.jpg',
+            description: "Focus on the Whole Buying Committee"
         },
         {
-            id: 'content-syndication',
-            title: 'Content Syndication',
-            image: '/Services/Content-Syandication.png',
-            description: "Now is the time to Propel Your B2B Growth & Boost Your Sales Performance with RDIGS Sales"
+            id: 'problem-aware-lead-generation',
+            title: 'Problem Aware Lead Generation',
+            image: '/Services/problem-aware-lead-gen.jpg',
+            description: "Get Into Deals Before Your Competitors Show Up"
+        },
+        {
+            id: 'data-verification',
+            title: 'Data Verification',
+            image: '/Services/data-varification.jpg',
+            description: "Is Your Data Helping You Sell or Holding You Back?"
         }
     ]
 
@@ -55,53 +55,58 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 100 }}   // start from below
             animate={{ opacity: 1, y: 0 }}     // move to normal position
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-gray-50 px-4 mb-5"
+            className="bg-white px-4 pb-10"
         >
-            <div className="max-w-3xl mx-auto text-center pb-8 py-8">
+            <div className="max-w-4xl mx-auto text-center pt-16 pb-12">
                 <h4
-                    className=" font-bold"
-                    style={{ color: "#3099D5", fontSize: "24px" }}
+                    className="font-medium mb-2"
+                    style={{ color: "#3099D5", fontSize: "18px" }}
                 >
                     Our Services
                 </h4>
-                <h1 className="text-[56px] font-bold mb-2">We Provide Best Services</h1>
-                <p className="text-gray-700  text-[16px]">
+                <h1 className="text-[40px] md:text-[48px] font-bold text-[#16243D] mb-4">We Provide Best Services</h1>
+                <p className="text-gray-600 text-[15px] leading-relaxed">
                     RDIGS is your strategic partner in driving unstoppable B2B growth with data-powered marketing and sales solutions. Our expertise in account-based marketing, intent-driven strategies, and precision sales development fuels high-quality lead generation and revenue acceleration. We craft intelligent, results-driven campaigns that amplify engagement, maximize conversions, and position your brand ahead of the competition. From content syndication to cutting-edge digital marketing, our unrivaled approach ensures sustainable success. Unlock new business opportunities and supercharge your sales with RDIGS—where innovation meets impact.
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
                 {service.map((item, index) => (
                     <motion.div
                         key={item.id}
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.2, duration: 0.6 }}
-                        className="group bg-gray-100 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:bg-[#3099D5] hover:text-white flex flex-col"
+                        className="bg-[#F4F4F4] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col border border-gray-100"
                     >
-                        <div className="relative w-full h-52 overflow-hidden rounded-t-xl">
-                            <Image    
+                        <div className="w-full overflow-hidden rounded-t-2xl">
+                            <Image
                                 src={item.image}
                                 alt={item.title}
-                                fill
-                                className="object-contain bg-white transition-all duration-300"
+                                width={500}
+                                height={300}
+                                className="w-full h-auto object-contain"
                             />
-                            <div className="absolute inset-0 bg-[#C9DEF4]/30 translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out pointer-events-none" />
                         </div>
 
-                        <div className="p-6 flex flex-1 flex-col justify-between">
-                            <div>
-                                <h3 className="text-[24px] font-semibold mb-3 group-hover:text-white transition-colors duration-200">
-                                    {item.title}
-                                </h3>
-                                <p className="text-[16px] text-[#606060] group-hover:text-white text-sm mb-4 transition-colors duration-200">
-                                    {item.description}
-                                </p>
-                            </div>
-                            <Link href={`/Services/${item.id}`}>
-                                <span className="inline-block bg-[#3099D5] text-white group-hover:bg-white group-hover:text-[#3099D5] hover:bg-[#16243D] hover:text-white font-semibold text-sm px-5 py-2 rounded-full transition-all duration-200">
+                        <div className="p-8 flex flex-col flex-1">
+                            <h3 className="text-[22px] font-semibold mb-3 text-[#3099D5]">
+                                {item.title}
+                            </h3>
+                            <p className="text-[15px] text-gray-600 mb-8 flex-1">
+                                {item.description}
+                            </p>
+
+                            <Link href={`/Services/${item.id}`} className="mt-auto">
+                                <span className="inline-flex items-center justify-between gap-3 bg-[#3099D5] text-white font-medium text-sm pl-5 pr-1 py-1 rounded-full hover:bg-[#2582B7] transition-colors duration-200 w-36">
                                     Read More
-                                </span>                                                                                                                 
+                                    <span className="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3099D5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </span>
+                                </span>
                             </Link>
                         </div>
                     </motion.div>
@@ -109,16 +114,16 @@ export default function ServicesPage() {
             </div>
 
             {/* news and updates  */}
-            <div className="container-fluid py-3 px-6 md:px-10 bg-white mt-5">
+            <div className="container-fluid py-16 px-6 md:px-10">
                 {/* Title Section */}
-                <div className="text-center mx-auto max-w-4xl mb-8">
-                    <h4 className="text-[#16243D] text-xl font-bold mb-2">
+                <div className="text-center mx-auto max-w-4xl mb-12">
+                    <h4 className="text-[#3099D5] text-lg font-medium mb-2">
                         From Blog
                     </h4>
-                    <h1 className="text-[40px] font-bold text-[#3099D5] leading-tight mb-2">
+                    <h1 className="text-[40px] font-bold text-[#16243D] leading-tight mb-4">
                         News And Updates
                     </h1>
-                    <p className="text-[16px] text-gray-700 text-[#606060] ">
+                    <p className="text-[15px] text-gray-600 leading-relaxed">
                         Explore how B2B brands qualify the right leads, break down data silos, and create seamless customer journeys. From lead generation to conversion, get insights that drive smarter decisions. Learn how touchpoints and personalization impact engagement. Fuel growth with content syndication, advertising, and data-driven strategies.
                     </p>
                 </div>

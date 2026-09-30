@@ -59,16 +59,7 @@ export default function HomeSection() {
                         </h1>
 
                         <p className="text-gray-500 mb-4 text-[1.1rem] leading-relaxed">
-                            Most demand generation stops at the download. At RD Info Global
-                            Solutions, we go further. We help ensure the leads you generate—
-                            whether at the top, middle, or bottom of the funnel—remember your
-                            brand, understand the outcomes you deliver, and are more likely to
-                            come back when they’re ready to buy.
-                        </p>
-
-                        <p className="text-gray-500 text-[1.1rem] leading-relaxed">
-                            Our difference lies in how we connect visibility, timing, and value
-                            across the entire buying journey.
+                            Most demand generation stops at generating a lead. At RD Info Global Solutions, we focus on what happens next. We help clients generate leads who are more likely to remember their brand when buying decisions begin, and connect with decision makers earlier in the buying journey, while they recognize a problem but have not yet fully shaped the solution or shortlisted suppliers. That creates better conversations, a stronger pipeline, and higher conversion potential.
                         </p>
                     </div>
 
@@ -78,13 +69,10 @@ export default function HomeSection() {
                         <div className="animate__animated animate__fadeInLeft">
                             <div className="p-6 h-full bg-gray-100 rounded shadow-sm">
                                 <h4 className="text-2xl text-[#3099D5] font-semibold mb-3">
-                                    1. Beyond the Lead
+                                    1. Leads Who Remember Your Brand
                                 </h4>
                                 <p className="text-base text-gray-800 leading-relaxed">
-                                    We don’t see a form fill or a download as the finish line. Our
-                                    approach builds ongoing visibility so your brand becomes
-                                    familiar, trusted, and front of mind when the buyer is ready to
-                                    take the next step.
+                                    Many leads download content and forget who it came from. We help keep your brand visible after engagement, building familiarity and making you more likely to be considered when the buying process starts.
                                 </p>
                             </div>
                         </div>
@@ -93,13 +81,10 @@ export default function HomeSection() {
                         <div className="animate__animated animate__fadeInRight">
                             <div className="p-6 h-full bg-gray-100 rounded shadow-sm">
                                 <h4 className="text-2xl text-[#3099D5] font-semibold mb-3">
-                                    2. Verified and Insight-Rich
+                                    2. Earlier Access to Buyers
                                 </h4>
                                 <p className="text-base text-gray-800 leading-relaxed">
-                                    Every lead we deliver is verified and enriched with deeper
-                                    insight. This helps your marketing and sales teams focus on the
-                                    right accounts, improving engagement quality and conversion
-                                    potential.
+                                    Today’s buyers often wait until late in the journey before speaking to sales. By then, competitors may already be ahead. Our Problem Aware Lead approach helps you engage prospects earlier, when they know something needs fixing, but before they are committed to how to solve it.
                                 </p>
                             </div>
                         </div>
@@ -108,13 +93,10 @@ export default function HomeSection() {
                         <div className="animate__animated animate__fadeInLeft">
                             <div className="p-6 h-full bg-gray-100 rounded shadow-sm">
                                 <h4 className="text-2xl text-[#3099D5] font-semibold mb-3">
-                                    3. Consistent, Intent-Driven Visibility
+                                    3. Better Quality Conversations
                                 </h4>
                                 <p className="text-base text-gray-800 leading-relaxed">
-                                    We blend intent data with display campaigns to make sure your
-                                    message lands repeatedly and memorably. This consistent exposure
-                                    reinforces your value proposition and strengthens brand recall
-                                    across every stage of the funnel.
+                                    We blend intent data with display campaigns to make sure your message lands Earlier engagement means more open conversations, stronger trust, and greater opportunity to shape buying criteria in your favor.
                                 </p>
                             </div>
                         </div>
@@ -123,16 +105,13 @@ export default function HomeSection() {
                         <div className="animate__animated animate__fadeInRight">
                             <div className="p-6 h-full bg-gray-100 rounded shadow-sm">
                                 <h4 className="text-2xl text-[#3099D5] font-semibold mb-3">
-                                    4. Outcome-Focused Growth
+                                    4. Demand Generation Built for Revenue
                                 </h4>
                                 <p className="text-base text-gray-800 mb-3 leading-relaxed">
-                                    Our programmes are designed to create commercial impact —
-                                    helping your brand achieve stronger awareness, deeper
-                                    engagement, and higher-quality pipeline.
+                                    We do not measure success by downloads alone. We focus on commercial outcomes: shortlist visibility, stronger opportunities, and a pipeline that converts.
                                 </p>
                                 <p className="text-base font-semibold italic text-gray-800">
-                                    Because demand generation isn’t about who clicks first, it’s
-                                    about who buyers remember when it counts.
+                                    Because demand generation is not just about generating leads. It is about generating an advantage.
                                 </p>
                             </div>
                         </div>
