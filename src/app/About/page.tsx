@@ -1,6 +1,5 @@
 'use client'
 
-import FaqAccordion from '@/component/FaqAccordian/page'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { FaLinkedinIn } from 'react-icons/fa'
@@ -100,29 +99,6 @@ const teamMembers = [
         delay: 0.18,
     },
 ];
-
-const aboutFaqs = [
-    {
-        question: '1. High-Quality Leads',
-        answer:
-            'We supply our prospects with high-quality leads adapted to their unique requirements...',
-    },
-    {
-        question: '2. Innovative Strategies',
-        answer:
-            'We employ cutting-edge techniques and technologies to ensure our clients stay ahead...',
-    },
-    {
-        question: '3. Customized Solutions',
-        answer:
-            'We ensure that our prospects get the most bang for their buck by providing individualized services...',
-    },
-    {
-        question: '4. Data-Driven Approach',
-        answer:
-            'We use a data-driven strategy to ensure that our methods are based on the most recent market trends...',
-    },
-]
 
 export default function AboutUs() {
     return (

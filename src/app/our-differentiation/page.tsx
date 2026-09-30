@@ -1,7 +1,6 @@
 // components/HomeSection.tsx
 'use client';
 
-import Image from 'next/image';
 import 'animate.css';
 import FaqAccordion from '@/component/FaqAccordian/page';
 
@@ -31,14 +30,6 @@ const aboutFaqs = [
         answer: "It depends on the type of lead and where it sits in the funnel. For top-of-funnel campaigns, we use a combination of email and display advertising to drive awareness and engagement. For mid- and lower-funnel activity, our experienced telemarketing team helps deliver qualified leads ready for deeper conversations. We are always transparent about how each campaign is run, and for programmes involving telemarketing, we provide full call recordings so you can review quality and compliance with confidence."
     },
 ]
-
-const cards = [
-    { img: "Content-Marketing.png", title: "Content Marketing" },
-    { img: "Account-Based-Marketing.png", title: "Account Based Marketing" },
-    { img: "Intent-Fused-Marketing.png", title: "Intent Fused Marketing" },
-    { img: "Install-Base-Marketing.png", title: "Install Base Marketing" },
-    { img: "WebinarEvent-Marketing.png", title: "Webinar/Event Marketing" },
-];
 
 export default function HomeSection() {
     return (

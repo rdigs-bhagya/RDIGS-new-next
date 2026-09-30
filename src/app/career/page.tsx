@@ -7,13 +7,6 @@ import { useState } from "react";
 import ApplyModal from "@/component/ApplyModel/page";
 
 
-// Define a type for Job
-interface Job {
-    img: string;
-    title: string;
-}
-
-
 export default function CareerIntro() {
     // animation settings
     const fadeInUp = {
