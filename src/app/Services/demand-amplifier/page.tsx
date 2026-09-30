@@ -318,7 +318,7 @@ export default function DemandAmplifierPage() {
                     <div className="md:w-2/5 relative h-[250px] w-full flex justify-end z-10">
                         <div className="relative w-full h-full">
                             <Image
-                                src="/Services/abm.jpg"
+                                src="/services/abm.jpg"
                                 alt="Funnel Visualization"
                                 fill
                                 className="object-contain"

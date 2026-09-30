@@ -9,25 +9,25 @@ export default function ServicesPage() {
         {
             id: 'demand-amplifier',
             title: 'Demand Amplifier',
-            image: '/Services/abm.jpg',
+            image: '/services/abm.jpg',
             description: "Demand Generation That Actually Converts—Not Just Fills Your CRM"
         },
         {
             id: 'account-based-marketing',
             title: 'ABM Services',
-            image: '/Services/dmeand.jpg',
+            image: '/services/dmeand.jpg',
             description: "Focus on the Whole Buying Committee"
         },
         {
             id: 'problem-aware-lead-generation',
             title: 'Problem Aware Lead Generation',
-            image: '/Services/problem-aware-lead-gen.jpg',
+            image: '/services/problem-aware-lead-gen.jpg',
             description: "Get Into Deals Before Your Competitors Show Up"
         },
         {
             id: 'data-verification',
             title: 'Data Verification',
-            image: '/Services/data-varification.jpg',
+            image: '/services/data-varification.jpg',
             description: "Is Your Data Helping You Sell or Holding You Back?"
         }
     ]
