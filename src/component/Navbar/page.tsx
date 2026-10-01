@@ -162,6 +162,9 @@ const Navbar = () => {
                     <Link href="/engagement-engine" onClick={closeAll} className={dropdownLinkBase}>
                       Engagement Engine
                     </Link>
+                    <Link href="/rdigs-engagement-engine" onClick={closeAll} className={dropdownLinkBase}>
+                      RDIGS Engagement Engine
+                    </Link>
                     {/* <Link href="/Services" onClick={closeAll} className={dropdownLinkBase}>
                       Problem-Aware Lead Gen
                     </Link>
