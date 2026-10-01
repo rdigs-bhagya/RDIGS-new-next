@@ -92,7 +92,7 @@ export default function EngagementEnginePage() {
           {/* Box 1 */}
           <div className="bg-white rounded-xl p-6 shadow-sm border-l-4 border-blue-500">
             <h3 className="text-[#3099D5] font-semibold mb-2">Audience Profiling</h3>
-            <p className="text-sm text-gray-600">We ask your ICP qualifying questions like: "What best describes your current position regarding X?"</p>
+            <p className="text-sm text-gray-600">We ask your ICP qualifying questions like: &quot;What best describes your current position regarding X?&quot;</p>
           </div>
           {/* Box 2 */}
           <div className="bg-white rounded-xl p-6 shadow-sm border-l-4 border-red-400">
