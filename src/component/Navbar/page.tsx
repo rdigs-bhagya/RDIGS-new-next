@@ -159,11 +159,8 @@ const Navbar = () => {
                     } absolute left-0 top-full pt-1.5 w-52 transition-all duration-200 z-50`}
                 >
                   <div className="bg-white shadow-lg rounded-md border border-gray-100 py-1.5">
-                    <Link href="/Services" onClick={closeAll} className={dropdownLinkBase}>
+                    <Link href="/engagement-engine" onClick={closeAll} className={dropdownLinkBase}>
                       Engagement Engine
-                    </Link>
-                    <Link href="/rdigs-engagement-engine" onClick={closeAll} className={dropdownLinkBase}>
-                      RDIGS Engagement Engine
                     </Link>
                     {/* <Link href="/Services" onClick={closeAll} className={dropdownLinkBase}>
                       Problem-Aware Lead Gen
@@ -381,17 +378,8 @@ const Navbar = () => {
               </button>
               {mobileDropdown === 'products' && (
                 <div className="pl-4 mt-2 space-y-2 border-l-2 border-[#3099D5] py-1 bg-gray-50/50 rounded-r-md">
-                  <Link href="/Services" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
-                    Demand Amplifier
-                  </Link>
-                  <Link href="/Services" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
-                    Account-Based Marketing
-                  </Link>
-                  <Link href="/Services" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
-                    Problem-Aware Lead Gen
-                  </Link>
-                  <Link href="/Services" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
-                    Data Verification
+                  <Link href="/engagement-engine" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
+                    Engagement Engine
                   </Link>
                 </div>
               )}
@@ -423,16 +411,16 @@ const Navbar = () => {
               </button>
               {mobileDropdown === 'strategies' && (
                 <div className="pl-4 mt-2 space-y-2 border-l-2 border-[#3099D5] py-1 bg-gray-50/50 rounded-r-md">
-                  <Link href="/Services" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
+                  <Link href="/strategies/content-syndication" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
                     Content Syndication
                   </Link>
-                  <Link href="/Services" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
+                  <Link href="/strategies/account-based-marketing" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
                     Account-Based Marketing
                   </Link>
-                  <Link href="/Services" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
+                  <Link href="/strategies/intent-based-marketing" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
                     Intent-Based Marketing
                   </Link>
-                  <Link href="/Services" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
+                  <Link href="/strategies/event-based-marketing" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
                     Event-Based Marketing
                   </Link>
                 </div>

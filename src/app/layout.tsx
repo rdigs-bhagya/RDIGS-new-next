@@ -18,6 +18,9 @@ const dmSans = DM_Sans({
 export const metadata = {
   title: 'RDIGS',
   description: 'RDIGS Digital Marketing & Demand Generation Services',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
