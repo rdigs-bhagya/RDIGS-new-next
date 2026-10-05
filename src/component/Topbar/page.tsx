@@ -18,10 +18,10 @@ const Topbar = () => {
           {/* Left Section */}
           <div className="flex items-center text-xs">
             <div className="flex items-center border-r border-gray-300 pr-3.5">
-              <Link href="#" className="flex items-center text-[#555555] hover:text-[#3099D5] transition-colors">
+              <a href="https://www.google.com/maps/search/523B,+Downtown+City+Vista,+Fountain+Road,+Kharadi,+Pune+411014/@18.5564281,73.9277702,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="flex items-center text-[#555555] hover:text-[#3099D5] transition-colors">
                 <FaMapMarkerAlt className="text-[#3099D5] mr-1.5 text-[11.5px]" />
                 <span className="text-[12px] font-medium">Find A Location</span>
-              </Link>
+              </a>
             </div>
             <div className="pl-3.5">
               <Link href="mailto:contact@rdigs.com" className="flex items-center text-[#555555] hover:text-[#3099D5] transition-colors">

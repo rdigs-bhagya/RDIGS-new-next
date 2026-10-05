@@ -54,7 +54,7 @@ export default function AccountBasedMarketingPage() {
                     <div className="md:w-[38%] text-center">
                         <div className="w-full max-w-[437px] mx-auto">
                             <Image
-                                src="/acc-base-marketting/bg-abm-main-iImg.png"
+                                src="/acc-base-marketting/bg-abm-main-img.png"
                                 alt="ABM Main"
                                 width={437}
                                 height={437}
