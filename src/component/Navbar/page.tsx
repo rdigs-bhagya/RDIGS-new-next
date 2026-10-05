@@ -280,14 +280,14 @@ const Navbar = () => {
           <div className="flex flex-col text-[12px] xl:text-[13px] text-[#444444] font-semibold leading-tight space-y-1">
             <div className="flex items-center gap-1.5">
               <Image src="/email-signature/V1.png" alt="US" width={18} height={13} className="h-[12px] w-auto inline" />
-              <a href="tel:+13022089310" className="hover:text-[#3099D5] transition-colors">
-                US: +1 (302)-208-9310
+              <a href="tel:+13023085310" className="hover:text-[#3099D5] transition-colors">
+                US: +1 302-308-5310
               </a>
             </div>
             <div className="flex items-center gap-1.5">
               <Image src="/email-signature/V2.png" alt="UK" width={18} height={13} className="h-[12px] w-auto inline" />
-              <a href="tel:+442071931043" className="hover:text-[#3099D5] transition-colors">
-                UK: +44 20 7193 1043
+              <a href="tel:+442075517242" className="hover:text-[#3099D5] transition-colors">
+                UK: +44 20 7551 7242
               </a>
             </div>
           </div>
@@ -479,11 +479,11 @@ const Navbar = () => {
             <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Get in touch</p>
             <div className="flex items-center gap-2 text-sm text-[#555555]">
               <Image src="/email-signature/V1.png" alt="US" width={16} height={12} className="h-[11px] w-auto inline" />
-              <a href="tel:+13023295310" className="hover:text-[#3099D5]">US: +1 302-329-5310</a>
+              <a href="tel:+13023085310" className="hover:text-[#3099D5]">US: +1 302-308-5310</a>
             </div>
             <div className="flex items-center gap-2 text-sm text-[#555555]">
               <Image src="/email-signature/V2.png" alt="UK" width={16} height={12} className="h-[11px] w-auto inline" />
-              <a href="tel:+442075617242" className="hover:text-[#3099D5]">UK: +44 20 75617242</a>
+              <a href="tel:+442075517242" className="hover:text-[#3099D5]">UK: +44 20 7551 7242</a>
             </div>
           </div>
         </div>
