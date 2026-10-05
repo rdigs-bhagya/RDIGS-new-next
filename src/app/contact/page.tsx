@@ -12,14 +12,40 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // In a real project you would POST to an API route here.
-    // For the demo we simply show a success message.
-    setSuccessMessage("Your message has been submitted successfully!");
-    // Reset the form after a short delay.
-    e.currentTarget.reset();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    setIsSubmitting(true);
+    setSuccessMessage("");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch(
+        "https://0cecifp2q1.execute-api.us-east-1.amazonaws.com/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("The message could not be submitted. Please try again.");
+      }
+
+      setSuccessMessage("Your message has been submitted successfully!");
+      form.reset();
+    } catch {
+      setErrorMessage("The message could not be submitted. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -86,6 +112,11 @@ export default function ContactPage() {
                 {successMessage}
               </div>
             )}
+            {errorMessage && (
+              <div role="alert" className="bg-red-100 border border-red-200 text-red-800 rounded p-4 mb-4 text-center">
+                {errorMessage}
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name & Email */}
@@ -101,7 +132,7 @@ export default function ContactPage() {
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-3 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm"
+                    className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
                   >
                     Your Name
                   </label>
@@ -117,7 +148,7 @@ export default function ContactPage() {
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-3 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm"
+                    className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
                   >
                     Your Email
                   </label>
@@ -137,7 +168,7 @@ export default function ContactPage() {
                   />
                   <label
                     htmlFor="phone"
-                    className="absolute left-3 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm"
+                    className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
                   >
                     Your Phone
                   </label>
@@ -152,7 +183,7 @@ export default function ContactPage() {
                   />
                   <label
                     htmlFor="project"
-                    className="absolute left-3 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm"
+                    className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
                   >
                     Your Project
                   </label>
@@ -170,7 +201,7 @@ export default function ContactPage() {
                 />
                 <label
                   htmlFor="subject"
-                  className="absolute left-3 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm"
+                  className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
                 >
                   Subject
                 </label>
@@ -188,7 +219,7 @@ export default function ContactPage() {
                 />
                 <label
                   htmlFor="message"
-                  className="absolute left-3 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm"
+                  className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
                 >
                   Message
                 </label>
@@ -197,9 +228,10 @@ export default function ContactPage() {
               {/* Submit button */}
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-[#3099D5] text-white py-3 rounded-md hover:bg-[#2874a6] transition-colors"
               >
-                Save Message
+                {isSubmitting ? "Submitting..." : "Save Message"}
               </button>
             </form>
           </div>
