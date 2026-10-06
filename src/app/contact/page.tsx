@@ -55,34 +55,41 @@ export default function ContactPage() {
         <div className="order-0 text-center max-w-3xl mx-auto pb-15">
           <span className="inline-flex items-center rounded-full bg-[#3099D5]/10 px-4 py-1.5 text-sm font-semibold tracking-wide text-[#1682bf]">Contact Us</span>
           <h1 className="text-4xl md:text-5xl font-bold text-[#16243D] mt-4">
-            If you have any comments, please apply now
+            Get in touch with our team
           </h1>
         </div>
 
         <div className="order-2 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-10 w-full">
-          <a href="mailto:contact@rdigs.com" className="group rounded-2xl border border-sky-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="rounded-2xl border border-sky-100 bg-white p-5 shadow-sm">
             <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-[#1682bf]">
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
             </span>
-            <span className="block text-sm font-medium text-gray-500">Email us</span>
-            <span className="mt-1 block font-semibold text-[#16243D] group-hover:text-[#1682bf]">contact@rdigs.com</span>
-          </a>
+            <h2 className="text-lg font-bold text-[#16243D]">Email Us</h2>
+            <p className="mt-2 text-sm leading-6 text-gray-600">Have a question or want to start a conversation? Reach out to the right team, and we’ll be happy to help.</p>
+            <div className="mt-4 space-y-3 text-sm">
+              <p><span className="block font-semibold text-gray-500">General Enquiries</span><a className="font-semibold text-[#1682bf] hover:underline" href="mailto:contact@rdigs.com">contact@rdigs.com</a></p>
+              <p><span className="block font-semibold text-gray-500">Sales &amp; New Business</span><a className="font-semibold text-[#1682bf] hover:underline" href="mailto:sales@rdigs.com">sales@rdigs.com</a></p>
+              <p><span className="block font-semibold text-gray-500">Careers &amp; Human Resources</span><a className="font-semibold text-[#1682bf] hover:underline" href="mailto:hr@rdigs.com">hr@rdigs.com</a></p>
+            </div>
+          </div>
           <div className="rounded-2xl border border-sky-100 bg-white p-5 shadow-sm">
             <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-[#1682bf]">
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M21 16.5v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 10.2 18a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.9 3.2 2 2 0 0 1 3.9 1h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.8 9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.9 2.6Z"/></svg>
             </span>
-            <span className="block text-sm font-medium text-gray-500">Call our offices</span>
-            <span className="mt-1 block text-sm font-semibold leading-6 text-[#16243D]">
+            <h2 className="text-lg font-bold text-[#16243D]">Call Our Offices</h2>
+            <p className="mt-2 text-sm leading-6 text-gray-600">Prefer to speak with us directly? Connect with our team to discuss your demand generation goals, campaign requirements, or general enquiries.</p>
+            <span className="mt-4 block text-sm font-semibold leading-6 text-[#16243D]">
               <a className="hover:text-[#1682bf]" href="tel:+13023085310">US: +1 302-308-5310</a><br/>
-              <a className="hover:text-[#1682bf]" href="tel:+442075517242">UK: +44 20 7551 7242</a>
+              <a className="hover:text-[#1682bf]" href="tel:+442075517242">UK: +44 207-551-7242</a><br/>
+              <a className="hover:text-[#1682bf]" href="tel:+912046358200">India: +91 204-635-8200</a>
             </span>
           </div>
-          <a href="https://www.google.com/maps/search/523B,+Downtown+City+Vista,+Fountain+Road,+Kharadi,+Pune+411014/@18.5564281,73.9277702,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="group rounded-2xl border border-sky-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <a href="https://www.google.com/maps/search/212A,+Downtown+City+Vista,+Fountain+Road,+Kharadi,+Pune+411014/@18.5564281,73.9277702,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="group rounded-2xl border border-sky-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
             <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-[#1682bf]">
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
             </span>
             <span className="block text-sm font-medium text-gray-500">Find our India office</span>
-            <span className="mt-1 block font-semibold text-[#16243D] group-hover:text-[#1682bf]">523B, Downtown City Vista<br/>Fountain Road, Kharadi<br/>Pune 411014, India</span>
+            <span className="mt-1 block font-semibold text-[#16243D] group-hover:text-[#1682bf]">212A, Downtown City Vista<br/>Fountain Road, Kharadi<br/>Pune 411014, India</span>
             <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#1682bf]">Open in Google Maps <span aria-hidden="true">↗</span></span>
           </a>
         </div>
@@ -267,16 +274,17 @@ export default function ContactPage() {
 
         <div className="order-3 mt-14 grid gap-6 rounded-3xl bg-[#16243D] p-5 text-white shadow-xl sm:p-7 md:grid-cols-[1fr_1.2fr] md:items-center">
           <div className="px-2 py-3 sm:px-4">
-            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">Visit us</span>
-            <h2 className="mt-3 text-2xl font-bold sm:text-3xl">Come say hello in Pune</h2>
-            <p className="mt-3 max-w-md leading-7 text-slate-300">523B, Downtown City Vista, Fountain Road, Kharadi, Pune 411014, India</p>
+            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">Find Us Around the World</span>
+            <h2 className="mt-3 text-2xl font-bold sm:text-3xl">Global reach, local teams</h2>
+            <p className="mt-3 max-w-md leading-7 text-slate-300">With a presence across India, the United States, and the United Kingdom, we’re positioned to support B2B brands and campaigns across global markets.</p>
             <div className="mt-5 space-y-3 border-t border-white/15 pt-4 text-sm leading-6 text-slate-300">
-              <p><span className="font-semibold text-white">United States</span><br/>919, North Market Street, Suite 950, Wilmington, Delaware 19801</p>
-              <p><span className="font-semibold text-white">United Kingdom</span><br/>71-75 Shelton Street, Covent Garden, London WC2H 9JQ</p>
+              <p><span className="font-semibold text-white">India (Operations)</span><br/>212A, Downtown City Vista, Fountain Road, Kharadi, Pune 411014, India</p>
+              <p><span className="font-semibold text-white">United States (Sales)</span><br/>919 North Market Street, Suite 950, Wilmington, Delaware 19801, USA</p>
+              <p><span className="font-semibold text-white">United Kingdom (Sales)</span><br/>71–75 Shelton Street, Covent Garden, London WC2H 9JQ, UK</p>
             </div>
-            <a href="https://www.google.com/maps/search/523B,+Downtown+City+Vista,+Fountain+Road,+Kharadi,+Pune+411014/@18.5564281,73.9277702,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#3099D5] px-5 py-3 font-semibold text-white transition hover:bg-sky-500">Get directions <span aria-hidden="true">↗</span></a>
+            <a href="https://www.google.com/maps/search/212A,+Downtown+City+Vista,+Fountain+Road,+Kharadi,+Pune+411014/@18.5564281,73.9277702,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#3099D5] px-5 py-3 font-semibold text-white transition hover:bg-sky-500">Get directions <span aria-hidden="true">↗</span></a>
           </div>
-          <a href="https://www.google.com/maps/search/523B,+Downtown+City+Vista,+Fountain+Road,+Kharadi,+Pune+411014/@18.5564281,73.9277702,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" aria-label="Open the Pune office location in Google Maps" className="relative block min-h-64 overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(135deg,#d9f0fb,#f2f8fc_45%,#d5e6ef)]">
+          <a href="https://www.google.com/maps/search/212A,+Downtown+City+Vista,+Fountain+Road,+Kharadi,+Pune+411014/@18.5564281,73.9277702,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" aria-label="Open the Pune office location in Google Maps" className="relative block min-h-64 overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(135deg,#d9f0fb,#f2f8fc_45%,#d5e6ef)]">
             <div aria-hidden="true" className="absolute inset-0 opacity-50" style={{ backgroundImage: "linear-gradient(35deg, transparent 46%, #9bb8c7 47%, #9bb8c7 49%, transparent 50%), linear-gradient(145deg, transparent 42%, #a8c4d2 43%, #a8c4d2 45%, transparent 46%), linear-gradient(90deg, transparent 48%, #fff 49%, #fff 52%, transparent 53%)", backgroundSize: "130px 100px, 160px 120px, 80px 80px" }} />
             <span className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center">
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#3099D5] text-white shadow-xl ring-8 ring-white/60"><svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>

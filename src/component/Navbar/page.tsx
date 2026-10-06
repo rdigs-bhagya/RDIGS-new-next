@@ -162,7 +162,7 @@ const Navbar = () => {
                     <Link href="/engagement-engine" onClick={closeAll} className={dropdownLinkBase}>
                       Engagement Engine
                     </Link>
-                    <Link href="/rdigs-engagement-engine" onClick={closeAll} className={dropdownLinkBase}>
+                    <Link href="/rdigs-enmagement-engine" onClick={closeAll} className={dropdownLinkBase}>
                       RDIGS Engagement Engine
                     </Link>
                     {/* <Link href="/Services" onClick={closeAll} className={dropdownLinkBase}>
@@ -381,7 +381,7 @@ const Navbar = () => {
               </button>
               {mobileDropdown === 'products' && (
                 <div className="pl-4 mt-2 space-y-2 border-l-2 border-[#3099D5] py-1 bg-gray-50/50 rounded-r-md">
-                  <Link href="/engagement-engine" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
+                  <Link href="/rdigs-enmagement-engine" onClick={closeAll} className="block text-sm text-[#666666] hover:text-[#3099D5] py-1">
                     Engagement Engine
                   </Link>
                 </div>

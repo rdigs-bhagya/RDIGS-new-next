@@ -31,4 +31,33 @@ body {
   padding: 0;
 }
 
+.gradient-highlight {
+  display: inline;
+  color: white;
+  padding: 0 0.06em;
+  background-color: #238fca;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.gradient-highlight.is-animating {
+  background-image: linear-gradient(105deg, #238fca 0%, #238fca 39%, #b8f5ff 49%, #238fca 59%, #238fca 100%);
+  background-size: 240% 100%;
+  background-position: 100% 50%;
+  animation: gradient-flow 1.7s ease-in-out 1;
+}
+
+@keyframes gradient-flow {
+  from { background-position: 100% 50%; }
+  to { background-position: -140% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-highlight.is-animating {
+    animation: none;
+    background-image: none;
+    background-color: #238fca;
+  }
+}
+
 
