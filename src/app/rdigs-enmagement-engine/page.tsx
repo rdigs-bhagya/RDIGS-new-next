@@ -82,7 +82,7 @@ export default function RdigsEngagementEnginePage() {
               That means one content download or one outbound call isn’t enough. Your brand needs to show up consistently - with relevance - throughout the journey.
             </p>
           </div>
-          <div className={styles.journeyImagePlaceholder} aria-label="Space reserved for the Rule of 7 journey image"></div>
+          <div className={styles.journeyImagePlaceholder}><Image src="/engagement-engine/6%20Pt%20Infographics.png" alt="Six points in the buyer journey" width={1498} height={303} sizes="(min-width: 1104px) 1040px, calc(100vw - 48px)" /></div>
         </div>
       </section>
 

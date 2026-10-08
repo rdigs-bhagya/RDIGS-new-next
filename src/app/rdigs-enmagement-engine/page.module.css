@@ -736,3 +736,8 @@
 @media(max-width:900px){.worksLayout{grid-template-columns:minmax(200px,.8fr) minmax(0,1.2fr);gap:18px}}
 @media(max-width:700px){.worksLayout{grid-template-columns:1fr;gap:32px}.worksScroller{height:auto;max-height:none;overflow:visible}}
 .worksStep.activeStep .worksStepBody h3{color:#0872b9}
+.journeyImagePlaceholder img { display: block; width: 100%; height: auto; }
+/* Let the Rule of 7 infographic keep its full natural aspect ratio. */
+.journeyImagePlaceholder{height:auto}
+@media(max-width:700px){.journeyImagePlaceholder{height:auto}}
+.journeyImagePlaceholder{width:min(100%,980px);max-width:980px;margin-left:auto;margin-right:auto}
