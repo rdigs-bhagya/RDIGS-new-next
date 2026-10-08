@@ -1,15 +1,22 @@
-import Link from "next/link";
+import Image from "next/image";
+import { Bricolage_Grotesque, Urbanist } from "next/font/google";
 import RunningHighlight from "./RunningHighlight";
+import WorksProcess from "./WorksProcess";
+import styles from "./page.module.css";
+
+const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage" });
+const urbanist = Urbanist({ subsets: ["latin"], variable: "--font-urbanist" });
+
 
 export default function RdigsEngagementEnginePage() {
   return (
-    <main className="text-[#111]">
+    <main className={`${styles.page} ${bricolage.variable} ${urbanist.variable}`}>
       <section className="relative isolate overflow-hidden bg-gradient-to-r from-white via-[#e8f8ff] to-[#16a9e6]">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_76%_35%,rgba(255,255,255,0.96),transparent_35%),radial-gradient(ellipse_at_53%_80%,rgba(255,255,255,0.45),transparent_42%)]" />
         <div className="mx-auto grid min-h-[650px] max-w-[1320px] items-center gap-4 px-6 py-14 md:grid-cols-[1.08fr_0.92fr] md:px-10 lg:py-16">
           <div className="z-10 max-w-[690px]">
             <span className="inline-flex rounded-full border border-[#32a8e9] bg-white/80 px-5 py-2 text-lg font-semibold shadow-[0_4px_16px_rgba(22,36,61,0.12)]">The RDIGS Engagement Engine</span>
-            <h1 className="mt-6 text-[42px] leading-[1.12] tracking-[-0.04em] sm:text-[52px] lg:text-[56px]">
+            <h1 className={`${styles.heading} mt-6 text-[42px] leading-[1.12] tracking-[-0.04em] sm:text-[52px] lg:text-[56px]`}>
               <span className="font-light">Don’t Just </span><RunningHighlight>Capture Leads.</RunningHighlight><br />
               <span className="font-bold">Build Memory.<br />Create Momentum.</span>
             </h1>
@@ -20,31 +27,95 @@ export default function RdigsEngagementEnginePage() {
               The RDIGS Engagement Engine is our proprietary approach to demand generation, designed to surround your target audience with relevant brand experiences across the buying journey - building awareness before conversion and reinforcing engagement after the lead is captured.
             </p>
             <p className="mt-5 text-[17px]">Because generating a lead is only the beginning.</p>
-            <Link href="/contact" className="mt-7 inline-flex rounded-full border border-[#168fe0] bg-white/75 px-5 py-2 text-lg shadow-sm transition hover:bg-white hover:shadow-md">Build Your Engagement Engine</Link>
+            <a href="/contact" className="mt-7 inline-flex rounded-full border border-[#168fe0] bg-white/75 px-5 py-2 text-lg shadow-sm transition hover:bg-white hover:shadow-md">Build Your Engagement Engine</a>
           </div>
           <div className="hidden min-h-[470px] md:block" aria-hidden="true" />
         </div>
       </section>
 
-      <section className="bg-[#f4f4f4] px-6 py-14 md:px-10 md:py-16">
-        <div className="mx-auto max-w-[1040px]">
-          <div className="text-center">
-            <span className="inline-flex rounded-full border border-[#32a8e9] bg-white px-6 py-2 text-lg font-semibold shadow-[0_4px_16px_rgba(22,36,61,0.12)]">The Problem With Traditional Lead Generation</span>
-            <h2 className="mt-5 text-[32px] font-bold leading-tight tracking-[-0.035em] sm:text-[40px]">A Lead Doesn’t Mean <RunningHighlight>They Remember You</RunningHighlight></h2>
-          </div>
-          <div className="mt-8 grid items-center gap-10 md:grid-cols-[1.55fr_0.9fr] md:gap-14">
+      <section className="relative overflow-hidden bg-[#f4f4f4] px-6 py-14 md:px-10 md:py-16">
+        <div className={styles.decorativeArcs} aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-[1040px]">
+          <header className="text-center">
+            <span className={styles.pill}>The Problem With Traditional Lead Generation</span>
+            <h2 className={`${styles.heading} mt-5 text-[32px] font-bold leading-tight tracking-[-0.035em] sm:text-[40px]`}>A Lead Doesn’t Mean <RunningHighlight>They Remember You</RunningHighlight></h2>
+          </header>
+          <div className="mt-8 grid items-center gap-10 md:grid-cols-[0.9fr_1.55fr] md:gap-14">
+            <div className="relative mx-auto w-full max-w-[300px] md:max-w-none">
+              <Image
+                src="/engagement-engine/Traditional%20Lead%20Gen.png"
+                alt="A prospect downloads an asset, their details are captured, and the lead is delivered to sales"
+                width={722}
+                height={718}
+                priority
+                sizes="(min-width: 768px) 240px, 70vw"
+                className="relative z-10 h-auto w-full rounded-2xl"
+              />
+            </div>
             <div className="text-[17px] leading-[1.4]">
               <p>Traditional lead generation often works in isolation.</p>
-              <p className="mt-5">A prospect downloads an asset.<br />Their details are captured.<br />The lead is delivered to sales.</p>
+              <div className={styles.processSteps}>
+                <p>A prospect downloads an asset.</p>
+                <p>Their details are captured.</p>
+                <p>The lead is delivered to sales.</p>
+              </div>
               <p className="mt-4">And then?</p>
-              <p className="mt-3">Your sales team reaches out to someone who may barely remember the content they engaged with - let alone the company behind it.</p>
-              <p className="mt-4">That creates a fundamental disconnect between <strong>lead generation and buyer engagement.</strong></p>
-              <p className="mt-3">The RDIGS Engagement Engine is designed to <span className="border-b-2 border-[#27a7e4] pb-1">close that gap.</span></p>
+              <p>Your sales team reaches out to someone who may barely remember the content they engaged with - let alone the company behind it.</p>
+              <div className="mt-4">
+                <p>That creates a fundamental disconnect between <strong>lead generation and buyer engagement.</strong></p>
+                <p className="mt-3">The RDIGS Engagement Engine is designed to <span className="border-b-2 border-[#27a7e4] pb-1">close that gap.</span></p>
+              </div>
             </div>
-            <div className="hidden min-h-[370px] md:block" aria-hidden="true" />
           </div>
         </div>
       </section>
+
+      <section className={styles.ruleSection}>
+        <div className={styles.contentWidth}>
+          <div className={styles.ruleIntro}>
+            <div>
+              <span className={styles.pill}>The Rule of 7 Has Changed</span>
+              <h2 className={`${styles.heading} ${styles.ruleHeading}`}>B2B buyers rarely act after a <RunningHighlight>single interaction.</RunningHighlight></h2>
+            </div>
+            <p className={styles.ruleCopy}>
+              They research independently, consume content, compare solutions, encounter brands across multiple channels and involve multiple stakeholders before entering a serious sales conversation.<br />
+              That means one content download or one outbound call isn’t enough. Your brand needs to show up consistently - with relevance - throughout the journey.
+            </p>
+          </div>
+          <div className={styles.journeyImagePlaceholder} aria-label="Space reserved for the Rule of 7 journey image"></div>
+        </div>
+      </section>
+
+      <section className={styles.engineSection}>
+        <div className={styles.engineInner}>
+          <header className={styles.engineHeader}>
+            <span className={styles.pill}>What Is the RDIGS Engagement Engine?</span>
+            <h2 className={styles.heading}>Demand Generation<br /><RunningHighlight>Built Around the Entire Journey</RunningHighlight></h2>
+            <p>The RDIGS Engagement Engine brings together audience intelligence, intent, content, display advertising, telemarketing and multi-channel engagement into one connected demand generation program.</p>
+            <p>Instead of treating every channel as a separate activity, we use them together to create continuity across the buyer journey.</p>
+          </header>
+          <div className={styles.engineFlow}>
+            <article className={styles.flowCard}>
+              <h3>Before the Lead</h3>
+              <p>Build awareness and familiarity across your target audience.</p>
+            </article>
+            <article className={styles.flowCard}>
+              <h3>At the Point<br />of Engagement</h3>
+              <p>Capture demand and understand what matters to each prospect.</p>
+            </article>
+            <article className={styles.flowCard}>
+              <h3>After the Lead</h3>
+              <p>Continue engaging the prospect with messaging relevant to their interests and challenges.</p>
+            </article>
+            <article className={styles.resultCard}>
+              <span>The result?</span>
+              <h3>A lead that doesn’t arrive cold.</h3>
+              <p>It arrives with context, familiarity and continued brand exposure behind it.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+<WorksProcess />
     </main>
   );
 }

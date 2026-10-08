@@ -159,9 +159,9 @@ const Navbar = () => {
                     } absolute left-0 top-full pt-1.5 w-52 transition-all duration-200 z-50`}
                 >
                   <div className="bg-white shadow-lg rounded-md border border-gray-100 py-1.5">
-                    <Link href="/engagement-engine" onClick={closeAll} className={dropdownLinkBase}>
+                    {/* <Link href="/engagement-engine" onClick={closeAll} className={dropdownLinkBase}>
                       Engagement Engine
-                    </Link>
+                    </Link> */}
                     <Link href="/rdigs-enmagement-engine" onClick={closeAll} className={dropdownLinkBase}>
                       RDIGS Engagement Engine
                     </Link>

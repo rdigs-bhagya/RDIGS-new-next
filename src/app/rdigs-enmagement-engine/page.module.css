@@ -1,0 +1,738 @@
+.page {
+  color: #090909;
+  font-family: var(--font-bricolage), sans-serif;
+}
+
+.page :global(*) {
+  font-family: var(--font-bricolage), sans-serif !important;
+  box-sizing: border-box;
+}
+
+.page .heading,
+.page .heading :global(*) {
+  font-family: var(--font-urbanist), sans-serif !important;
+}
+
+.problemSection,
+.ruleSection,
+.engineSection,
+.heroSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection {
+  min-height: 560px;
+  background: linear-gradient(105deg, #fff 0%, #e8f8ff 52%, #16a9e6 100%);
+  padding: 64px 0;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 76% 35%, rgb(255 255 255 / 96%), transparent 35%), radial-gradient(ellipse at 53% 80%, rgb(255 255 255 / 45%), transparent 42%);
+}
+
+.heroInner {
+  position: relative;
+  display: grid;
+  width: min(100%, 1320px);
+  min-height: 430px;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 1;
+  max-width: 690px;
+}
+
+.heroPill {
+  display: inline-block;
+  border: 1px solid #32a8e9;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 80%);
+  padding: 8px 20px;
+  box-shadow: 0 4px 16px rgb(22 36 61 / 12%);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.heroHeading {
+  margin: 24px 0 0;
+  font-size: clamp(42px, 5vw, 56px);
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.heroHeading strong {
+  font-weight: 750;
+}
+
+.heroCopy p {
+  max-width: 690px;
+  margin: 20px 0 0;
+  font-size: 17px;
+  line-height: 1.42;
+}
+
+.heroButton {
+  display: inline-flex;
+  margin-top: 24px;
+  border: 1px solid #168fe0;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 75%);
+  padding: 9px 20px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+  font-size: 17px;
+  text-decoration: none;
+  transition: background 150ms ease, box-shadow 150ms ease;
+}
+
+.heroButton:hover {
+  background: #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+}
+
+.heroVisualPlaceholder {
+  min-height: 400px;
+}
+
+.problemSection {
+  min-height: 431px;
+  background: #f4f4f4;
+  padding: 36px 24px 18px;
+}
+
+.problemInner,
+.contentWidth {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1040px);
+  margin: 0 auto;
+}
+
+.decorativeArcs {
+  position: absolute;
+  top: 40px;
+  left: -485px;
+  width: 740px;
+  height: 740px;
+  border: 1px solid #168bd4;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.decorativeArcs::after {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 820px;
+  height: 820px;
+  border: 1px solid #168bd4;
+  border-radius: 50%;
+  content: "";
+}
+
+.centerHeader,
+.engineHeader {
+  text-align: center;
+}
+
+.pill {
+  display: inline-block;
+  border: 1px solid #42b9ec;
+  border-radius: 999px;
+  background: #fafafa;
+  padding: 4px 16px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 12%);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.heading {
+  font-family: var(--font-urbanist), sans-serif !important;
+}
+
+.problemGrid {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  margin-top: 15px;
+}
+
+.traditionalImage {
+  display: flex;
+  min-height: 260px;
+  align-items: center;
+  justify-content: center;
+}
+
+.traditionalImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.problemCopy {
+  font-size: 13px;
+  line-height: 1.28;
+}
+
+.problemCopy p {
+  margin: 0;
+}
+
+.leadLine {
+  margin-bottom: 11px !important;
+  font-size: 16px;
+}
+
+.processSteps {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.processSteps p {
+  position: relative;
+  width: fit-content;
+  border: 1px solid #cce4ff;
+  border-radius: 99px;
+  background: #fff;
+  padding: 4px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.processSteps p:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" stroke="%23cccccc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><polyline points="6 10 12 16 18 10"></polyline><polyline points="6 4 12 10 18 4"></polyline></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 4px;
+}
+
+.andThen {
+  margin: 5px 0 7px 30px !important;
+  font-weight: 700;
+}
+
+.disconnectNote {
+  margin-top: 12px;
+  border-radius: 13px;
+  background: #fff;
+  padding: 7px 12px;
+}
+
+.disconnectNote p+p {
+  margin-top: 3px;
+}
+
+.ruleSection {
+  padding: 46px 24px 32px;
+  background: #fff;
+}
+
+.ruleIntro {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+}
+
+.ruleHeading {
+  max-width: 285px;
+  margin-top: 12px;
+  font-size: 29px;
+  line-height: 1.05;
+  font: bold;
+}
+
+.ruleCopy {
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.journey {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 37px auto 0;
+}
+
+.journeyItem {
+  position: relative;
+  width: 76px;
+  padding-top: 23px;
+}
+
+.stepNumber {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  transform: translateX(-50%);
+  place-items: center;
+  border-radius: 50%;
+  background: #40b8e8;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stepCard {
+  position: relative;
+  display: flex;
+  min-height: 86px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #d3f1fc 0%, #e7f3f7 100%);
+  padding: 28px 3px 8px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.iconPlaceholder {
+  width: 29px;
+  height: 29px;
+  margin: -5px 0 10px;
+  border: 1px solid #d4e2e9;
+  border-radius: 50%;
+  background: #f6fbfd;
+  box-shadow: 0 2px 8px rgb(26 96 132 / 15%);
+}
+
+.journeyArrow {
+  position: absolute;
+  top: 58px;
+  right: -16px;
+  color: #438cff;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.engineSection {
+  background: #f4f4f4;
+  padding: 52px 24px 44px;
+}
+
+.engineInner {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .heroInner {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .problemSection,
+  .ruleSection,
+  .engineSection {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.engineHeader .heading {
+  margin-top: 12px;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.engineHeader p {
+  max-width: 680px;
+  margin: 14px auto 0;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.engineFlow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 1.8fr;
+  gap: 14px;
+  align-items: stretch;
+  margin: 43px auto 0;
+}
+
+.flowCard,
+.resultCard {
+  min-height: 122px;
+  border: 1px solid #d0d0d0;
+  border-radius: 9px;
+  background: #fff;
+  padding: 15px 13px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 12%);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.flowCard h3 {
+  margin: 0 0 14px;
+  color: #168ee0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.flowCard p,
+.resultCard p {
+  margin: 0;
+}
+
+.resultCard {
+  border-color: #40b8e8;
+  background: #40b8e8;
+  color: #fff;
+  box-shadow: none;
+}
+
+.resultCard>span {
+  display: inline-block;
+  margin-bottom: 8px;
+  border-radius: 99px;
+  background: #fff;
+  padding: 1px 7px;
+  color: #168ee0;
+}
+
+.resultCard h3 {
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+
+@media (min-width: 1200px) {
+
+  .problemInner,
+  .contentWidth,
+  .engineInner {
+    width: min(100%, 1040px);
+  }
+}
+
+@media (max-width: 700px) {
+  .heroSection {
+    padding: 42px 0;
+  }
+
+  .heroInner {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .heroVisualPlaceholder {
+    display: none;
+  }
+
+  .problemSection {
+    padding: 32px 20px;
+  }
+
+  .decorativeArcs {
+    top: 210px;
+    left: -570px;
+  }
+
+  .problemGrid,
+  .ruleIntro {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .problemGrid {
+    max-width: 440px;
+    margin: 22px auto 0;
+  }
+
+  .traditionalImage {
+    width: min(100%, 300px);
+    min-height: 0;
+    margin: 0 auto;
+  }
+
+  .heading {
+    font-size: 25px;
+  }
+
+  .ruleSection,
+  .engineSection {
+    padding: 36px 20px;
+  }
+
+  .ruleHeading {
+    max-width: 100%;
+  }
+
+  .journey {
+    display: grid;
+    grid-template-columns: repeat(3, 76px);
+    gap: 20px 16px;
+  }
+
+  .journeyArrow {
+    display: none;
+  }
+
+  .engineFlow .flowCard::after {
+    top: -4vw;
+    right: -3.3vw;
+    width: 8vw;
+    height: 4.2vw;
+  }
+  .engineFlow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 380px) {
+  .pill {
+    font-size: 14px;
+  }
+
+  .journey {
+    grid-template-columns: repeat(2, 76px);
+  }
+}
+/* Rule of 7 styles matched to the supplied PHP reference. */
+.ruleSection {
+  padding: 46px 40px 32px;
+  background: #fff;
+}
+.ruleIntro {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 40px;
+}
+.ruleIntro .pill {
+  padding: 4px 16px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.ruleHeading {
+  max-width: 360px;
+  margin: 12px 0 0;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+.ruleCopy {
+  font-size: clamp(13px, 1.2vw, 17px);
+  line-height: 1.3;
+  margin: 16px 0 0;
+}
+.journeyImagePlaceholder {
+  height: 110px;
+  margin: 37px auto 0;
+  max-width: 1040px;
+}
+@media (max-width: 700px) {
+  .ruleSection {
+    padding: 18px 24px 22px;
+  }
+  .ruleIntro {
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    gap: 14px;
+  }
+  .ruleIntro .pill {
+    padding: 2px 8px;
+    font-size: 9px;
+    white-space: nowrap;
+  }
+  .ruleHeading {
+    max-width: 150px;
+    margin: 6px 0 0;
+    font-size: 15px;
+    line-height: 1.08;
+    letter-spacing: -.25px;
+  }
+  .ruleCopy {
+    font-size: 7.4px;
+    line-height: 1.25;
+    margin: 16px 0 0;
+  }
+  .journeyImagePlaceholder {
+    height: 64px;
+    margin: 18px auto 0;
+  }
+}
+/* Engine section layout mirrored from the PHP page, scoped to this section. */
+.engineSection {
+  width: 100%;
+  padding: 55px 24px 40px;
+  background: #f4f4f4;
+}
+.engineInner {
+  width: min(100%, 1040px);
+}
+.engineHeader .pill {
+  padding: 4px 16px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.engineHeader .heading {
+  margin: 12px 0 0;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+.engineHeader p {
+  max-width: 680px;
+  font-size: clamp(13px, 1.2vw, 17px);
+  line-height: 1.3;
+  margin: 14px auto 0;
+}
+.engineFlow {
+  margin: 43px auto 0;
+}
+.engineFlow .flowCard {
+  position: relative;
+}
+.engineFlow .flowCard::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -20px;
+  right: -15px;
+  width: 38px;
+  height: 20px;
+  pointer-events: none;
+  background: center / 100% 100% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 20'%3E%3Cpath d='M1 18 C8 1 28 1 37 18' fill='none' stroke='%23168bd4' stroke-width='1.2'/%3E%3Cpath d='M31 13 L37 18 L39 11' fill='none' stroke='%23168bd4' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+@media (max-width: 700px) {
+  .engineSection {
+    width: 100%;
+    padding: 7px 20px 39px;
+  }
+  .engineInner {
+    transform: translateX(-10px);
+  }
+  .engineHeader .pill {
+    padding: 2px 8px;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+  .engineHeader .heading {
+    margin-top: 5px;
+    font-size: clamp(16px, 4.1vw, 18px);
+    line-height: 1.02;
+  }
+  .engineHeader p {
+    max-width: 390px;
+    margin: 7px auto 0;
+    font-size: 7.5px;
+    line-height: 1.25;
+  }
+  .engineFlow {
+    transform: translateX(-27px);
+    width: 100%;
+    max-width: 370px;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) 1.8fr;
+    gap: 8px;
+    margin: 22px auto 0;
+  }
+  .engineFlow .flowCard::after {
+    top: -4vw;
+    right: -3.3vw;
+    width: 8vw;
+    height: 4.2vw;
+  }
+  .flowCard,
+  .resultCard {
+    min-width: 0;
+    min-height: 69px;
+    padding: 3px;
+    border-radius: 6px;
+    font-size: 6.5px;
+    line-height: 1.15;
+  }
+  .flowCard h3,
+  .resultCard h3 {
+    margin-bottom: 6px;
+    font-size: 7px;
+    line-height: 1.1;
+  }
+  .resultCard > span {
+    margin-bottom: 5px;
+    padding: 1px 5px;
+    font-size: 6px;
+    line-height: 1.1;
+  }
+}
+
+
+/* Sticky title with independently scrollable engagement process. */
+.worksSection{min-height:100vh;padding:64px 160px;background:#fff}
+.worksLayout{display:grid;width:min(100%,770px);grid-template-columns:280px minmax(0,450px);align-items:start;gap:40px;margin:0 auto;transform:translateX(clamp(0px,3.7vw,38px))}
+.worksTitle{position:sticky;top:68px;margin:0;font-family:"Urbanist",sans-serif!important;font-size:40px;font-weight:700;line-height:1.08}
+.worksHighlight{color:#fff;background:#2f9fdf;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 2px}
+.worksScroller{max-height:calc(100vh - 128px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-right:8px}
+.worksScroller::-webkit-scrollbar{display:none}
+.worksStep{display:grid;grid-template-columns:50px minmax(0,1fr);gap:10px;padding:0 0 18px;margin:0 0 15px;border-bottom:1px solid #c9c9c9}
+.worksStep:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
+.worksNumber{color:#c7c7c7;font-family:"Urbanist",sans-serif!important;font-size:36px;font-weight:700;line-height:1}
+.worksStepBody{font-family:"Bricolage Grotesque",sans-serif!important;font-size:13px;line-height:1.3}
+.worksStepBody h3{margin:-2px 0 8px;color:#101010;font-family:"Urbanist",sans-serif!important;font-size:19px;font-weight:700;line-height:1.2}
+.worksStep .worksStepBody h3{color:#101010}
+.worksStepBody p{margin:0 0 7px}
+.worksTags{display:flex;flex-wrap:wrap;gap:6px 5px;margin:10px 0 17px}
+.worksTags span{display:inline-block;border:1px solid #c9c9c9;border-radius:999px;padding:2px 8px;font-size:12px;line-height:1.15;white-space:nowrap}
+.worksTags .activeTag{border-color:#42b9ec;background:#42b9ec;color:#fff}
+.blueTags span{border-color:transparent;background:#dceeff;color:#0872db}
+.worksOutcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0 13px}
+.worksOutcomes div{display:flex;min-height:81px;align-items:center;border:1px solid #d2d2d2;border-radius:8px;padding:12px 14px;font-size:12px;font-weight:700;line-height:1.15}
+@media(max-width:900px){.worksLayout{width:min(100%,760px);grid-template-columns:minmax(210px,.8fr) minmax(0,1.2fr);gap:28px;transform:none}}
+@media(max-width:700px){
+.worksSection{min-height:0;padding:44px 24px}
+.worksLayout{width:min(100%,500px);grid-template-columns:1fr;gap:32px;transform:none}
+.worksTitle{position:static;font-size:28px}
+.worksScroller{max-height:none;overflow:visible;padding-right:0}
+.worksStep{grid-template-columns:44px minmax(0,1fr);gap:8px}
+.worksNumber{font-size:30px}
+.worksStepBody{font-size:13px}
+.worksStepBody h3{font-size:17px}
+.worksOutcomes{gap:8px}
+.worksOutcomes div{min-height:72px;padding:8px;font-size:11px}
+.worksTags span{white-space:normal}
+}
+/* Widen the process layout and use the page gradient for the sticky heading. */
+.worksLayout{width:min(100%,1440px);grid-template-columns:minmax(0,.45fr) minmax(0,.55fr);gap:64px;transform:none}
+.worksScroller{padding-right:0}
+.worksStep:first-child .worksTags span{background:#fff;color:#111;transition:background-color .18s ease,color .18s ease,border-color .18s ease}
+.worksStep:first-child .worksTags span:hover,
+.worksStep:first-child .worksTags span:focus-visible{border-color:#42b9ec;background:#42b9ec;color:#fff}
+@media(max-width:900px){.worksLayout{width:100%;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px}}
+@media(max-width:700px){.worksLayout{width:min(100%,500px);grid-template-columns:1fr;gap:32px}}
+/* Keep the sticky heading close to the numbered process and align each step at the top as it scrolls. */
+.worksLayout{grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:20px}
+.worksScroller{height:calc(100vh - 128px);max-height:none;overflow-y:auto}
+@media(max-width:900px){.worksLayout{grid-template-columns:minmax(200px,.8fr) minmax(0,1.2fr);gap:18px}}
+@media(max-width:700px){.worksLayout{grid-template-columns:1fr;gap:32px}.worksScroller{height:auto;max-height:none;overflow:visible}}
+.worksStep.activeStep .worksStepBody h3{color:#0872b9}

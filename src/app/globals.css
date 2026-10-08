@@ -33,17 +33,16 @@ body {
 
 .gradient-highlight {
   display: inline;
-  color: white;
-  padding: 0 0.06em;
-  background-color: #238fca;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  color: inherit;
 }
 
 .gradient-highlight.is-animating {
-  background-image: linear-gradient(105deg, #238fca 0%, #238fca 39%, #b8f5ff 49%, #238fca 59%, #238fca 100%);
-  background-size: 240% 100%;
+  background-image: linear-gradient(100deg, #168bc9 0%, #24c8e8 24%, #7657e8 48%, #20c4e6 72%, #168bc9 100%);
+  background-size: 300% 100%;
   background-position: 100% 50%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
   animation: gradient-flow 1.7s ease-in-out 1;
 }
 
@@ -55,8 +54,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .gradient-highlight.is-animating {
     animation: none;
+    color: inherit;
     background-image: none;
-    background-color: #238fca;
   }
 }
 
