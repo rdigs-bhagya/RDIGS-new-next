@@ -116,6 +116,36 @@ export default function RdigsEngagementEnginePage() {
         </div>
       </section>
 <WorksProcess />
+<section className={styles.personalSection} aria-labelledby="personalSectionTitle">
+  <div className={styles.personalInner}>
+    <div className={styles.personalPillWrap}><span className={styles.pill + " " + styles.personalPill}>From Qualification to Personalization</span></div>
+    <div className={styles.personalIntro}>
+      <h2 className={styles.personalHeading} id="personalSectionTitle">What Your Prospect<br /><RunningHighlight>Tells Us Shapes What<br />They See Next</RunningHighlight></h2>
+      <div className={styles.personalIntroCopy}>
+        <p>This is where the Engagement Engine becomes more powerful.</p>
+        <p>During qualification, prospects can be asked targeted questions designed to uncover their specific business requirements.</p>
+        <p>For example:</p>
+      </div>
+    </div>
+    <div className={styles.personalQuestions} aria-label="Example qualification questions">
+      <div className={styles.personalQuestion}><span>Q1</span><p>What challenge are you currently trying<br className={styles.personalWideBreak} /> to solve?</p></div>
+      <div className={styles.personalQuestion}><span>Q3</span><p>What is driving your current requirement?</p></div>
+      <div className={styles.personalQuestion}><span>Q2</span><p>What capability is most important to your<br className={styles.personalWideBreak} /> organization?</p></div>
+      <div className={styles.personalQuestion}><span>Q3</span><p>What are your priorities when evaluating<br className={styles.personalWideBreak} /> a solution?</p></div>
+    </div>
+    <div className={styles.personalOutcomeRow}>
+      <div className={styles.personalClosingCopy}>
+        <p>Those answers create context.</p>
+        <p>And that context can inform what happens next. Instead of serving every lead the same generic message, post-lead engagement can reinforce messaging aligned with the needs and interests identified during qualification.</p>
+      </div>
+      <div className={styles.personalOutcomes}>
+        <div className={styles.personalOutcome}><span className={styles.personalIcon}>♙</span><span>One prospect</span></div>
+        <div className={styles.personalOutcome}><span className={styles.personalIcon}>⌕</span><span>One identified need</span></div>
+        <div className={styles.personalOutcome}><span className={styles.personalIcon}>▣</span><span>More relevant follow-up engagement.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
     </main>
   );
 }

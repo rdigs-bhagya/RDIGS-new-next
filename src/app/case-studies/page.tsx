@@ -1,8 +1,52 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+type ManagedCaseStudy = {
+    id: string;
+    title: string;
+    imageUrl?: string;
+    hasPdf: boolean;
+};
+
+const apiBaseUrl = (
+    process.env.NEXT_PUBLIC_API_URL ||
+    "https://0cecifp2q1.execute-api.us-east-1.amazonaws.com"
+).replace(/\/$/, "");
 
 export default function CaseStudies() {
+    const [managedCaseStudies, setManagedCaseStudies] = useState<ManagedCaseStudy[]>([]);
+    const [caseStudyError, setCaseStudyError] = useState("");
+
+    useEffect(() => {
+        const controller = new AbortController();
+
+        async function loadCaseStudies() {
+            try {
+                const response = await fetch(`${apiBaseUrl}/casestudies`, {
+                    signal: controller.signal,
+                    cache: "no-store",
+                });
+                if (!response.ok) {
+                    throw new Error(`Unable to load published case studies (${response.status}).`);
+                }
+
+                const result = await response.json() as { items?: ManagedCaseStudy[] };
+                if (!Array.isArray(result.items)) {
+                    throw new Error("The case-study response was invalid.");
+                }
+                setManagedCaseStudies(result.items);
+                setCaseStudyError("");
+            } catch (error) {
+                if (controller.signal.aborted) return;
+                setCaseStudyError(error instanceof Error ? error.message : "Unable to load published case studies.");
+            }
+        }
+
+        void loadCaseStudies();
+        return () => controller.abort();
+    }, []);
 
     const cards = [
         {
@@ -65,6 +109,54 @@ export default function CaseStudies() {
             {/* case studies */}
 
             <div className="container mx-auto my-8 px-4">
+                {caseStudyError && (
+                    <p role="alert" className="mx-6 mb-6 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+                        {caseStudyError}
+                    </p>
+                )}
+                {managedCaseStudies.length > 0 && (
+                    <section aria-labelledby="published-case-studies-title" className="mb-12">
+                        <div className="text-center mx-auto pb-8 max-w-3xl">
+                            <h2 id="published-case-studies-title" className="text-3xl font-bold text-[#212529]">
+                                Latest Case Studies
+                            </h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
+                            {managedCaseStudies.map((caseStudy) => (
+                                <article
+                                    key={caseStudy.id}
+                                    className="flex min-h-52 items-center overflow-hidden rounded-xl border border-gray-100 bg-white shadow-md"
+                                >
+                                    {caseStudy.imageUrl ? (
+                                        <div className="flex w-1/3 shrink-0 justify-center p-3">
+                                            <Image
+                                                src={caseStudy.imageUrl}
+                                                alt={caseStudy.title}
+                                                width={400}
+                                                height={240}
+                                                unoptimized
+                                                className="max-h-48 w-full rounded-lg object-cover"
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div aria-hidden="true" className="h-40 w-1/3 shrink-0 bg-sky-50" />
+                                    )}
+                                    <div className="flex-1 p-4">
+                                        <h3 className="mb-3 text-xl font-semibold text-[#212529]">
+                                            {caseStudy.title}
+                                        </h3>
+                                        {caseStudy.hasPdf && (
+                                            <span className="inline-flex rounded-full bg-sky-50 px-3 py-1 text-sm font-medium text-[#3099D5]">
+                                                PDF available
+                                            </span>
+                                        )}
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
                 {/* Heading */}
                 <div className="text-center mx-auto pb-12 max-w-3xl">
                     <h4 className="text-[#3099D5] text-[24px] font-semibold">Explore Services</h4>
