@@ -43,7 +43,7 @@ export default function RdigsEngagementEnginePage() {
           <div className="mt-8 grid items-center gap-10 md:grid-cols-[0.9fr_1.55fr] md:gap-14">
             <div className="relative mx-auto w-full max-w-[300px] md:max-w-none">
               <Image
-                src="/engagement-engine/Traditional%20Lead%20Gen.png"
+                src="/engagement-engine/traditional-lead-gen.png"
                 alt="A prospect downloads an asset, their details are captured, and the lead is delivered to sales"
                 width={722}
                 height={718}
@@ -82,7 +82,7 @@ export default function RdigsEngagementEnginePage() {
               That means one content download or one outbound call isn’t enough. Your brand needs to show up consistently - with relevance - throughout the journey.
             </p>
           </div>
-          <div className={styles.journeyImagePlaceholder}><Image src="/engagement-engine/6%20Pt%20Infographics.png" alt="Six points in the buyer journey" width={1498} height={303} sizes="(min-width: 1104px) 1040px, calc(100vw - 48px)" /></div>
+          <div className={styles.journeyImagePlaceholder}><Image src="/engagement-engine/6-pt-infographics.png" alt="Six points in the buyer journey" width={1498} height={303} sizes="(min-width: 1104px) 1040px, calc(100vw - 48px)" /></div>
         </div>
       </section>
 
