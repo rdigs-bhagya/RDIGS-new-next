@@ -146,6 +146,20 @@ export default function RdigsEngagementEnginePage() {
     </div>
   </div>
 </section>
+<section className={styles.continuationSection} aria-labelledby="continuationTitle">
+  <div className={styles.continuationInner}>
+    <span className={styles.pill}>THE LEAD IS CAPTURED. THE ENGAGEMENT CONTINUES.</span>
+    <h2 id="continuationTitle">Most lead generation programs stop<br className={styles.continuationDesktopBreak} /> here. <RunningHighlight>We don&apos;t.</RunningHighlight></h2>
+    <p className={styles.continuationIntro}>Once a lead has been delivered, traditional CPL programs consider their job complete. The RDIGS Engagement Engine continues working &#8212; qualified prospects can remain within a coordinated engagement sequence across channels such as:</p>
+    <div className={styles.continuationCards}>
+      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg></span><span className={styles.continuationNumber}>01</span></div><h3>ABM Display</h3><p>Continue surrounding the prospect and their account with relevant brand messaging.</p><div className={styles.continuationRule}></div></article>
+      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></span><span className={styles.continuationNumber}>02</span></div><h3>Email</h3><p>Reinforce key messages and content aligned with the campaign.</p><div className={styles.continuationRule}></div></article>
+      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2a14 14 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2C10 19 5 14 4 5a2 2 0 0 1 2-2Z"></path><path d="M14 4a6 6 0 0 1 6 6M14 7a3 3 0 0 1 3 3"></path></svg></span><span className={styles.continuationNumber}>03</span></div><h3>Voice</h3><p>Create human conversations that add context and identify changes in requirement, priority or buying readiness.</p><div className={styles.continuationRule}></div></article>
+      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle><path d="M12 1v4M12 19v4M1 12h4M19 12h4"></path></svg></span><span className={styles.continuationNumber}>04</span></div><h3>Retargeting</h3><p>Keep your brand visible as prospects continue researching and evaluating their options.</p><div className={styles.continuationRule}></div></article>
+    </div>
+    <p className={styles.continuationClosing}>This helps maintain momentum between the initial lead interaction and the next meaningful sales conversation.</p>
+  </div>
+</section>
     </main>
   );
 }

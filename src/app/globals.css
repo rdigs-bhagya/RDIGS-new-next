@@ -37,7 +37,7 @@ body {
 }
 
 .gradient-highlight.is-animating {
-  background-image: linear-gradient(100deg, #168bc9 0%, #24c8e8 24%, #7657e8 48%, #20c4e6 72%, #168bc9 100%);
+  background-image: linear-gradient(100deg, #168bc9 0%, #24c8e8 20%, #7657e8 42%, #20c4e6 64%, #4fc3f7 82%, #168bc9 100%);
   background-size: 300% 100%;
   background-position: 100% 50%;
   color: transparent;
