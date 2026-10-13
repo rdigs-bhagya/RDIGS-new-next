@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
+import { DynamicFormFields, useFormFields } from "@/component/DynamicFormFields";
 
 type ManagedCaseStudy = {
     id: string;
@@ -18,6 +20,40 @@ const apiBaseUrl = (
 export default function CaseStudies() {
     const [managedCaseStudies, setManagedCaseStudies] = useState<ManagedCaseStudy[]>([]);
     const [caseStudyError, setCaseStudyError] = useState("");
+    const [selectedCaseStudy, setSelectedCaseStudy] = useState<ManagedCaseStudy | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [downloadMessage, setDownloadMessage] = useState("");
+    const { fields, loading: fieldsLoading, error: fieldsError } = useFormFields("caseStudy");
+
+    async function handleDownload(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        if (!selectedCaseStudy) return;
+        setIsSubmitting(true);
+        setDownloadMessage("");
+        const downloadWindow = window.open("", "_blank");
+        if (downloadWindow) downloadWindow.opener = null;
+
+        try {
+            const payload = Object.fromEntries(new FormData(event.currentTarget).entries());
+            const response = await fetch(`${apiBaseUrl}/casestudies/${selectedCaseStudy.id}/download`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+            const result = await response.json() as { error?: string; downloadUrl?: string };
+            if (!response.ok || !result.downloadUrl) {
+                throw new Error(result.error || "The case study could not be downloaded.");
+            }
+            if (downloadWindow) downloadWindow.location.href = result.downloadUrl;
+            else window.location.assign(result.downloadUrl);
+            setDownloadMessage("Your download is ready in a new tab.");
+        } catch (error) {
+            downloadWindow?.close();
+            setDownloadMessage(error instanceof Error ? error.message : "The case study could not be downloaded.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
 
     useEffect(() => {
         const controller = new AbortController();
@@ -146,9 +182,11 @@ export default function CaseStudies() {
                                             {caseStudy.title}
                                         </h3>
                                         {caseStudy.hasPdf && (
-                                            <span className="inline-flex rounded-full bg-sky-50 px-3 py-1 text-sm font-medium text-[#3099D5]">
-                                                PDF available
-                                            </span>
+                                            <button
+                                                type="button"
+                                                onClick={() => { setSelectedCaseStudy(caseStudy); setDownloadMessage(""); }}
+                                                className="inline-flex rounded-full bg-sky-50 px-3 py-1 text-sm font-medium text-[#3099D5] transition hover:bg-sky-100"
+                                            >Download case study</button>
                                         )}
                                     </div>
                                 </article>
@@ -156,6 +194,36 @@ export default function CaseStudies() {
                         </div>
                     </section>
                 )}
+
+            {selectedCaseStudy && (
+                <div className="fixed inset-0 z-50 grid place-items-center overflow-y-auto bg-[#10203bb8] p-4" role="presentation"
+                    onMouseDown={(event) => {
+                        if (event.target === event.currentTarget && !isSubmitting) setSelectedCaseStudy(null);
+                    }}>
+                    <section role="dialog" aria-modal="true" aria-labelledby="case-study-download-title"
+                        className="relative w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
+                        <button type="button" aria-label="Close download form" disabled={isSubmitting}
+                            onClick={() => setSelectedCaseStudy(null)}
+                            className="absolute right-5 top-4 text-2xl text-gray-500 hover:text-gray-900">×</button>
+                        <p className="text-sm font-semibold uppercase tracking-wider text-[#3099D5]">Free case study</p>
+                        <h2 id="case-study-download-title" className="mt-2 pr-8 text-2xl font-bold text-[#16243D]">
+                            Download {selectedCaseStudy.title}
+                        </h2>
+                        <p className="mt-2 text-sm text-gray-600">Share your details to access the full case study.</p>
+                        {fieldsError && <p role="alert" className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">{fieldsError}</p>}
+                        {downloadMessage && <p role="status" className="mt-4 rounded-lg bg-sky-50 p-3 text-sm text-[#245b7c]">{downloadMessage}</p>}
+                        <form className="mt-5 space-y-4" onSubmit={handleDownload}>
+                            {fieldsLoading ? <p className="text-sm text-gray-500">Loading form…</p> : (
+                                <DynamicFormFields fields={fields} disabled={isSubmitting} variant="caseStudy" />
+                            )}
+                            <button type="submit" disabled={isSubmitting || fieldsLoading || Boolean(fieldsError)}
+                                className="w-full rounded-lg bg-[#3099D5] px-5 py-3 font-semibold text-white transition hover:bg-[#267bb0] disabled:cursor-not-allowed disabled:opacity-60">
+                                {isSubmitting ? "Preparing your download…" : "Get the case study"}
+                            </button>
+                        </form>
+                    </section>
+                </div>
+            )}
 
                 {/* Heading */}
                 <div className="text-center mx-auto pb-12 max-w-3xl">

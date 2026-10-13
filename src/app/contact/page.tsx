@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { DynamicFormFields, useFormFields } from "@/component/DynamicFormFields";
 
 // Contact page – a Tailwind replica of the original PHP/Bootstrap version.
 // The design follows the same visual language used across the site:
@@ -14,6 +15,7 @@ export default function ContactPage() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { fields, loading: fieldsLoading, error: fieldsError } = useFormFields("contact");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,13 +38,14 @@ export default function ContactPage() {
       );
 
       if (!response.ok) {
-        throw new Error("The message could not be submitted. Please try again.");
+        const result = await response.json().catch(() => ({})) as { error?: string };
+        throw new Error(result.error || "The message could not be submitted. Please try again.");
       }
 
       setSuccessMessage("Your message has been submitted successfully!");
       form.reset();
-    } catch {
-      setErrorMessage("The message could not be submitted. Please try again.");
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "The message could not be submitted. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -154,116 +157,16 @@ export default function ContactPage() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Name & Email */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    required
-                    className="peer block w-full appearance-none border-0 bg-gray-100 rounded-md py-3 px-4 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-[#3099D5]"
-                    placeholder="Your Name"
-                  />
-                  <label
-                    htmlFor="name"
-                    className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
-                  >
-                    Your Name
-                  </label>
+              {fieldsError && <p role="alert" className="rounded border border-red-200 bg-red-50 p-3 text-sm text-red-700">{fieldsError}</p>}
+              {fieldsLoading ? <p className="text-sm text-gray-500">Loading form…</p> : (
+                <div className="grid gap-4 md:grid-cols-2">
+                  <DynamicFormFields fields={fields} disabled={isSubmitting} />
                 </div>
-                <div className="relative">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                    className="peer block w-full appearance-none border-0 bg-gray-100 rounded-md py-3 px-4 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-[#3099D5]"
-                    placeholder="Your Email"
-                  />
-                  <label
-                    htmlFor="email"
-                    className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
-                  >
-                    Your Email
-                  </label>
-                </div>
-              </div>
-
-              {/* Phone & Project */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    required
-                    className="peer block w-full appearance-none border-0 bg-gray-100 rounded-md py-3 px-4 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-[#3099D5]"
-                    placeholder="Phone"
-                  />
-                  <label
-                    htmlFor="phone"
-                    className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
-                  >
-                    Your Phone
-                  </label>
-                </div>
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="project"
-                    id="project"
-                    className="peer block w-full appearance-none border-0 bg-gray-100 rounded-md py-3 px-4 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-[#3099D5]"
-                    placeholder="Project"
-                  />
-                  <label
-                    htmlFor="project"
-                    className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
-                  >
-                    Your Project
-                  </label>
-                </div>
-              </div>
-
-              {/* Subject */}
-              <div className="relative">
-                <input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  className="peer block w-full appearance-none border-0 bg-gray-100 rounded-md py-3 px-4 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-[#3099D5]"
-                  placeholder="Subject"
-                />
-                <label
-                  htmlFor="subject"
-                  className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
-                >
-                  Subject
-                </label>
-              </div>
-
-              {/* Message */}
-              <div className="relative">
-                <textarea
-                  name="message"
-                  id="message"
-                  required
-                  rows={5}
-                  className="peer block w-full appearance-none border-0 bg-gray-100 rounded-md py-3 px-4 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-[#3099D5] resize-none"
-                  placeholder="Leave a message here"
-                />
-                <label
-                  htmlFor="message"
-                  className="absolute left-3 top-[-0.55rem] z-10 bg-gray-100 px-1 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-placeholder-shown:px-0 peer-placeholder-shown:text-base peer-focus:top-[-0.55rem] peer-focus:bg-gray-100 peer-focus:px-1 peer-focus:text-sm"
-                >
-                  Message
-                </label>
-              </div>
-
+              )}
               {/* Submit button */}
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || fieldsLoading || Boolean(fieldsError)}
                 className="w-full bg-[#3099D5] text-white py-3 rounded-md hover:bg-[#2874a6] transition-colors"
               >
                 {isSubmitting ? "Submitting..." : "Save Message"}

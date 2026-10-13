@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
+import { DynamicFormFields, useFormFields } from '@/component/DynamicFormFields';
 
 const apiBaseUrl = (process.env.NEXT_PUBLIC_API_URL || 'https://0cecifp2q1.execute-api.us-east-1.amazonaws.com').replace(/\/$/, '');
 
@@ -13,6 +14,7 @@ export default function MediaDeckSection() {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const { fields, loading: fieldsLoading, error: fieldsError } = useFormFields('mediaDeck');
 
   useEffect(() => {
     if (!isModalOpen) return;
@@ -57,11 +59,7 @@ export default function MediaDeckSection() {
       const response = await fetch(`${apiBaseUrl}/mediadeck/download`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fullName: formData.get('fullName'),
-          email: formData.get('email'),
-          phone: formData.get('phone'),
-        }),
+        body: JSON.stringify(Object.fromEntries(formData.entries())),
       });
 
       if (!response.ok) {
@@ -156,56 +154,12 @@ export default function MediaDeckSection() {
               </p>
 
               <form className="space-y-4" onSubmit={handleSubmit}>
-                <label className="flex h-[52px] items-center gap-3 rounded-full bg-[#f1f4f8] px-5 text-[#3099d5] focus-within:ring-2 focus-within:ring-[#acd3f5]">
-                  <span className="sr-only">Full name</span>
-                  <input
-                    autoFocus
-                    autoComplete="name"
-                    className="min-w-0 flex-1 bg-transparent text-[15px] text-[#31415a] outline-none placeholder:text-[#65748b]"
-                    name="fullName"
-                    placeholder="Full Name"
-                    required
-                    maxLength={120}
-                    disabled={isSubmitting || hasDownloaded}
-                  />
-                  <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[18px] w-[18px] shrink-0 fill-current">
-                    <path d="M12 12a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Zm0 2c-4 0-7.2 2-7.2 4.5V21h14.4v-2.5c0-2.5-3.2-4.5-7.2-4.5Z" />
-                  </svg>
-                </label>
-
-                <label className="flex h-[52px] items-center gap-3 rounded-full bg-[#f1f4f8] px-5 text-[#3099d5] focus-within:ring-2 focus-within:ring-[#acd3f5]">
-                  <span className="sr-only">Email address</span>
-                  <input
-                    autoComplete="email"
-                    className="min-w-0 flex-1 bg-transparent text-[15px] text-[#31415a] outline-none placeholder:text-[#65748b]"
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    required
-                    maxLength={254}
-                    disabled={isSubmitting || hasDownloaded}
-                  />
-                  <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[18px] w-[18px] shrink-0 fill-current">
-                    <path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v.3l-10 6.4L2 5.8v-.3Zm0 2.7 9.5 6.1a1 1 0 0 0 1 0L22 8.2v10.3a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5V8.2Z" />
-                  </svg>
-                </label>
-
-                <label className="flex h-[52px] items-center gap-3 rounded-full bg-[#f1f4f8] px-5 text-[#3099d5] focus-within:ring-2 focus-within:ring-[#acd3f5]">
-                  <span className="sr-only">Contact number</span>
-                  <input
-                    autoComplete="tel"
-                    className="min-w-0 flex-1 bg-transparent text-[15px] text-[#31415a] outline-none placeholder:text-[#65748b]"
-                    name="phone"
-                    type="tel"
-                    placeholder="Contact Number"
-                    required
-                    maxLength={30}
-                    disabled={isSubmitting || hasDownloaded}
-                  />
-                  <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[18px] w-[18px] shrink-0 fill-current">
-                    <path d="M6.6 2.8a1.8 1.8 0 0 1 2.1.9l1.5 3.6a1.8 1.8 0 0 1-.4 2L8.4 10.7a14.2 14.2 0 0 0 4.9 4.9l1.4-1.4a1.8 1.8 0 0 1 2-.4l3.6 1.5a1.8 1.8 0 0 1 1.1 1.7v2.2a1.8 1.8 0 0 1-1.8 1.8C10.1 21 3 13.9 3 4.4a1.8 1.8 0 0 1 1.8-1.8h1.8v.2Z" />
-                  </svg>
-                </label>
+                {fieldsError && <p role="alert" className="rounded-lg bg-red-50 p-3 text-sm text-red-700">{fieldsError}</p>}
+                {fieldsLoading ? <p className="text-sm text-[#65748b]">Loading form…</p> : (
+                  <div className="space-y-3">
+                    <DynamicFormFields fields={fields} disabled={isSubmitting || hasDownloaded} variant="pill" />
+                  </div>
+                )}
 
                 <p className="px-1 text-center text-[14px] leading-6 text-[#16243d]">
                   We’ll share the media deck with you right away—no spam, just value.
@@ -216,7 +170,7 @@ export default function MediaDeckSection() {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting || hasDownloaded}
+                  disabled={isSubmitting || hasDownloaded || fieldsLoading || Boolean(fieldsError)}
                   className="h-[46px] w-full rounded-full bg-[#309bd5] text-[15px] font-bold text-white transition-colors hover:bg-[#168bc9] disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {isSubmitting ? 'Preparing your download…' : hasDownloaded ? 'Media Deck Downloaded' : 'Download Media Deck'}
