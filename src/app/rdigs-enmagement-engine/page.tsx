@@ -2,7 +2,9 @@ import Image from "next/image";
 import { Bricolage_Grotesque, Urbanist } from "next/font/google";
 import RunningHighlight from "./RunningHighlight";
 import WorksProcess from "./WorksProcess";
+import JourneyStages from "./JourneyStages";
 import styles from "./page.module.css";
+import EngagementCampaignForm from "@/component/EngagementCampaignForm";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage" });
 const urbanist = Urbanist({ subsets: ["latin"], variable: "--font-urbanist" });
@@ -98,14 +100,17 @@ export default function RdigsEngagementEnginePage() {
             <article className={styles.flowCard}>
               <h3>Before the Lead</h3>
               <p>Build awareness and familiarity across your target audience.</p>
+              <svg className={styles.flowArrow} viewBox="0 0 56 30" aria-hidden="true"><defs><linearGradient id="engineArrowGradient1" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#168bc9"/><stop offset=".55" stopColor="#4fc3f7"/><stop offset="1" stopColor="#7657e8"/></linearGradient></defs><path d="M2 27C12 3 43 3 51 25" fill="none" stroke="url(#engineArrowGradient1)" strokeWidth="1.5"/><path d="m44 21 7 5 2-9" fill="none" stroke="url(#engineArrowGradient1)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </article>
             <article className={styles.flowCard}>
               <h3>At the Point<br />of Engagement</h3>
               <p>Capture demand and understand what matters to each prospect.</p>
+              <svg className={styles.flowArrow} viewBox="0 0 56 30" aria-hidden="true"><defs><linearGradient id="engineArrowGradient2" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#168bc9"/><stop offset=".55" stopColor="#4fc3f7"/><stop offset="1" stopColor="#7657e8"/></linearGradient></defs><path d="M2 27C12 3 43 3 51 25" fill="none" stroke="url(#engineArrowGradient2)" strokeWidth="1.5"/><path d="m44 21 7 5 2-9" fill="none" stroke="url(#engineArrowGradient2)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </article>
             <article className={styles.flowCard}>
               <h3>After the Lead</h3>
               <p>Continue engaging the prospect with messaging relevant to their interests and challenges.</p>
+              <svg className={styles.flowArrow} viewBox="0 0 56 30" aria-hidden="true"><defs><linearGradient id="engineArrowGradient3" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#168bc9"/><stop offset=".55" stopColor="#4fc3f7"/><stop offset="1" stopColor="#7657e8"/></linearGradient></defs><path d="M2 27C12 3 43 3 51 25" fill="none" stroke="url(#engineArrowGradient3)" strokeWidth="1.5"/><path d="m44 21 7 5 2-9" fill="none" stroke="url(#engineArrowGradient3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </article>
             <article className={styles.resultCard}>
               <span>The result?</span>
@@ -160,6 +165,68 @@ export default function RdigsEngagementEnginePage() {
     <p className={styles.continuationClosing}>This helps maintain momentum between the initial lead interaction and the next meaningful sales conversation.</p>
   </div>
 </section>
-    </main>
+      <JourneyStages />
+
+      <section className={styles.memorySection} aria-labelledby="memoryTitle">
+        <div className={styles.memoryInner}>
+          <span className={`${styles.pill} ${styles.memoryEyebrow}`}>MORE THAN LEAD GENERATION</span>
+          <h2 id="memoryTitle">Built to create <RunningHighlight>memory and momentum.</RunningHighlight></h2>
+          <p className={styles.memoryIntro}>The Engagement Engine isn’t designed simply to increase the number of times someone sees an advertisement. Every stage has a purpose.</p>
+          <div className={styles.memoryCards}>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Visibility</h3><p>builds familiarity</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Content</h3><p>creates engagement</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Intent</h3><p>helps prioritize</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Human conversations</h3><p>create context</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Qualification</h3><p>identifies needs</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Personalization</h3><p>increases relevance</p></article>
+          </div>
+          <div className={styles.memoryClosing}><strong>Continued engagement keeps your brand present.</strong></div>
+        </div>
+      </section>
+      <section className={styles.campaignSection} aria-labelledby="campaignTitle">
+          <div className={styles.campaignLayout}>
+            <div className={styles.campaignIntro}>
+              <span className={`${styles.pill} ${styles.campaignEyebrow}`}>BUILT AROUND YOUR CAMPAIGN</span>
+              <h2 id="campaignTitle">There is no one-size-fits-all <RunningHighlight>Engagement Engine.</RunningHighlight></h2>
+              <p className={styles.campaignDescription}>Every program can be configured around your market, objectives, audience and sales process.</p>
+              <p className={styles.campaignLabel}>PROGRAMS MAY COMBINE</p>
+              <div className={styles.campaignChannels} aria-label="Available program channels">
+                <span>ABM Display</span><span>Content Syndication</span><span>Telemarketing</span><span>Intent</span><span>Email</span><span>Retargeting</span>
+              </div>
+              <p className={styles.campaignNote}>Or we can build a custom channel mix around your specific campaign requirements.</p>
+            </div>
+            <article className={styles.campaignCard} aria-label="Typical program details">
+              <div className={styles.campaignCardHeader}><span>TYPICAL PROGRAM</span><span className={styles.campaignDiamond} aria-hidden="true">◆</span></div>
+              <dl className={styles.campaignDetails}>
+                <div><dt>DURATION</dt><dd>8–12+ weeks</dd></div>
+                <div><dt>AUDIENCE</dt><dd>Custom ICP and/or Target Account List</dd></div>
+                <div><dt>CHANNELS</dt><dd>Configured by campaign</dd></div>
+                <div><dt>LEAD QUALIFICATION</dt><dd>Custom qualification framework</dd></div>
+                <div><dt>INVESTMENT</dt><dd>Based on audience, channels, lead requirements and program scope</dd></div>
+              </dl>
+              <div className={styles.campaignPrice}>
+                <div><span>STARTING FROM</span><strong>$10,000</strong></div>
+                <a href="#engagement-campaign-request" className={styles.campaignCta}>Build Your Program <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section className={styles.whySection} aria-labelledby="whyTitle">
+          <div className={styles.whyInner}>
+            <span className={`${styles.pill} ${styles.whyEyebrow}`}>WHY RDIGS?</span>
+            <h2 id="whyTitle">Demand generation with <RunningHighlight>more behind<br className={styles.whyDesktopBreak} /> the lead.</RunningHighlight></h2>
+            <p className={styles.whyIntro}>We believe the value of a demand generation partner shouldn’t be measured only by how many leads they deliver. It should be measured by how effectively they help create meaningful engagement with the market.</p>
+            <div className={styles.whyCards}>
+              <article className={styles.whyCard}><span className={styles.whyIcon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg></span><h3>Human + Digital</h3><p>Combine real conversations with digital engagement rather than relying on one channel alone.</p></article>
+              <article className={styles.whyCard}><span className={styles.whyIcon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1" /></svg></span><h3>Data-Driven Targeting</h3><p>Build programs around clearly defined accounts, audiences and buyer personas.</p></article>
+              <article className={styles.whyCard}><span className={styles.whyIcon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M19.4 15A8 8 0 0 1 5 19M4.6 9A8 8 0 0 1 19 5M12 12a4 4 0 0 1 4-4M12 12a4 4 0 0 0 4 4M12 12a4 4 0 0 1-4 4M12 12a4 4 0 0 0-4-4M12 2v2M22 12h-2M4 12H2" /></svg></span><h3>Intent-Fused</h3><p>Use signals of interest to help prioritize relevant accounts and prospects.</p></article>
+              <article className={styles.whyCard}><span className={styles.whyIcon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="4" width="14" height="18" rx="2" /><path d="M9 4.5V3h6v1.5M8 13l2.5 2.5L16 10" /></svg></span><h3>Qualification With Context</h3><p>Go beyond basic contact information to understand business needs and priorities.</p></article>
+              <article className={styles.whyCard}><span className={styles.whyIcon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="2" width="6" height="5" rx="1" /><rect x="2" y="17" width="6" height="5" rx="1" /><rect x="16" y="17" width="6" height="5" rx="1" /><path d="M12 7v5M5 17v-3h14v3" /></svg></span><h3>Multi-Channel Engagement</h3><p>Connect display, content, email and voice throughout the campaign.</p></article>
+              <article className={styles.whyCard}><span className={styles.whyIcon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" /><circle cx="12" cy="12" r="3" /></svg></span><h3>Transparent Delivery</h3><p>Clear campaign reporting and visibility into performance throughout the program.</p></article>
+            </div>
+          </div>
+        </section>
+        <EngagementCampaignForm />
+</main>
   );
 }
