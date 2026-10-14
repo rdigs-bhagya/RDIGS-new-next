@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { Bricolage_Grotesque, Urbanist } from "next/font/google";
 import RunningHighlight from "./RunningHighlight";
 import WorksProcess from "./WorksProcess";
@@ -19,7 +19,7 @@ export default function RdigsEngagementEnginePage() {
           <div className="z-10 max-w-[690px]">
             <span className="inline-flex rounded-full border border-[#32a8e9] bg-white/80 px-5 py-2 text-lg font-semibold shadow-[0_4px_16px_rgba(22,36,61,0.12)]">The RDIGS Engagement Engine</span>
             <h1 className={`${styles.heading} mt-6 text-[42px] leading-[1.12] tracking-[-0.04em] sm:text-[52px] lg:text-[56px]`}>
-              <span className="font-light">Don’t Just </span><RunningHighlight>Capture Leads.</RunningHighlight><br />
+              <span className="font-light">Don&apos;t Just </span><RunningHighlight>Capture Leads.</RunningHighlight><br />
               <span className="font-bold">Build Memory.<br />Create Momentum.</span>
             </h1>
             <p className="mt-6 max-w-[690px] text-[17px] leading-[1.42]">
@@ -31,7 +31,9 @@ export default function RdigsEngagementEnginePage() {
             <p className="mt-5 text-[17px]">Because generating a lead is only the beginning.</p>
             <a href="/contact" className="mt-7 inline-flex rounded-full border border-[#168fe0] bg-white/75 px-5 py-2 text-lg shadow-sm transition hover:bg-white hover:shadow-md">Build Your Engagement Engine</a>
           </div>
-          <div className="hidden min-h-[470px] md:block" aria-hidden="true" />
+          <div className="hidden min-h-[470px] items-center justify-center md:flex">
+            <Image src="/engagement-engine/rdigs-engagement-engine.png" alt="RDIGS Engagement Engine buyer journey diagram" width={1703} height={1853} priority sizes="(min-width: 768px) 42vw, 100vw" className={styles.heroEngineImage} />
+          </div>
         </div>
       </section>
 
@@ -40,7 +42,7 @@ export default function RdigsEngagementEnginePage() {
         <div className="relative z-10 mx-auto max-w-[1040px]">
           <header className="text-center">
             <span className={styles.pill}>The Problem With Traditional Lead Generation</span>
-            <h2 className={`${styles.heading} mt-5 text-[32px] font-bold leading-tight tracking-[-0.035em] sm:text-[40px]`}>A Lead Doesn’t Mean <RunningHighlight>They Remember You</RunningHighlight></h2>
+            <h2 className={`${styles.heading} mt-5 text-[32px] font-bold leading-tight tracking-[-0.035em] sm:text-[40px]`}>A Lead Doesnâ€™t Mean <RunningHighlight>They Remember You</RunningHighlight></h2>
           </header>
           <div className="mt-8 grid items-center gap-10 md:grid-cols-[0.9fr_1.55fr] md:gap-14">
             <div className="relative mx-auto w-full max-w-[300px] md:max-w-none">
@@ -81,7 +83,7 @@ export default function RdigsEngagementEnginePage() {
             </div>
             <p className={styles.ruleCopy}>
               They research independently, consume content, compare solutions, encounter brands across multiple channels and involve multiple stakeholders before entering a serious sales conversation.<br />
-              That means one content download or one outbound call isn’t enough. Your brand needs to show up consistently - with relevance - throughout the journey.
+              That means one content download or one outbound call isnâ€™t enough. Your brand needs to show up consistently - with relevance - throughout the journey.
             </p>
           </div>
           <div className={styles.journeyImagePlaceholder}><Image src="/engagement-engine/6-pt-infographics.png" alt="Six points in the buyer journey" width={1498} height={303} sizes="(min-width: 1104px) 1040px, calc(100vw - 48px)" /></div>
@@ -114,7 +116,7 @@ export default function RdigsEngagementEnginePage() {
             </article>
             <article className={styles.resultCard}>
               <span>The result?</span>
-              <h3>A lead that doesn’t arrive cold.</h3>
+              <h3>A lead that doesnâ€™t arrive cold.</h3>
               <p>It arrives with context, familiarity and continued brand exposure behind it.</p>
             </article>
           </div>
@@ -144,9 +146,9 @@ export default function RdigsEngagementEnginePage() {
         <p>And that context can inform what happens next. Instead of serving every lead the same generic message, post-lead engagement can reinforce messaging aligned with the needs and interests identified during qualification.</p>
       </div>
       <div className={styles.personalOutcomes}>
-        <div className={styles.personalOutcome}><span className={styles.personalIcon}>♙</span><span>One prospect</span></div>
-        <div className={styles.personalOutcome}><span className={styles.personalIcon}>⌕</span><span>One identified need</span></div>
-        <div className={styles.personalOutcome}><span className={styles.personalIcon}>▣</span><span>More relevant follow-up engagement.</span></div>
+        <div className={styles.personalOutcome}><span className={styles.personalIcon}>â™™</span><span>One prospect</span></div>
+        <div className={styles.personalOutcome}><span className={styles.personalIcon}>âŒ•</span><span>One identified need</span></div>
+        <div className={styles.personalOutcome}><span className={styles.personalIcon}>â–£</span><span>More relevant follow-up engagement.</span></div>
       </div>
     </div>
   </div>
@@ -157,10 +159,10 @@ export default function RdigsEngagementEnginePage() {
     <h2 id="continuationTitle">Most lead generation programs stop<br className={styles.continuationDesktopBreak} /> here. <RunningHighlight>We don&apos;t.</RunningHighlight></h2>
     <p className={styles.continuationIntro}>Once a lead has been delivered, traditional CPL programs consider their job complete. The RDIGS Engagement Engine continues working &#8212; qualified prospects can remain within a coordinated engagement sequence across channels such as:</p>
     <div className={styles.continuationCards}>
-      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg></span><span className={styles.continuationNumber}>01</span></div><h3>ABM Display</h3><p>Continue surrounding the prospect and their account with relevant brand messaging.</p><div className={styles.continuationRule}></div></article>
-      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></span><span className={styles.continuationNumber}>02</span></div><h3>Email</h3><p>Reinforce key messages and content aligned with the campaign.</p><div className={styles.continuationRule}></div></article>
-      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2a14 14 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2C10 19 5 14 4 5a2 2 0 0 1 2-2Z"></path><path d="M14 4a6 6 0 0 1 6 6M14 7a3 3 0 0 1 3 3"></path></svg></span><span className={styles.continuationNumber}>03</span></div><h3>Voice</h3><p>Create human conversations that add context and identify changes in requirement, priority or buying readiness.</p><div className={styles.continuationRule}></div></article>
-      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle><path d="M12 1v4M12 19v4M1 12h4M19 12h4"></path></svg></span><span className={styles.continuationNumber}>04</span></div><h3>Retargeting</h3><p>Keep your brand visible as prospects continue researching and evaluating their options.</p><div className={styles.continuationRule}></div></article>
+      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg></span></div><h3>ABM Display</h3><p>Continue surrounding the prospect and their account with relevant brand messaging.</p><div className={styles.continuationRule}></div></article>
+      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></span></div><h3>Email</h3><p>Reinforce key messages and content aligned with the campaign.</p><div className={styles.continuationRule}></div></article>
+      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2a14 14 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2C10 19 5 14 4 5a2 2 0 0 1 2-2Z"></path><path d="M14 4a6 6 0 0 1 6 6M14 7a3 3 0 0 1 3 3"></path></svg></span></div><h3>Voice</h3><p>Create human conversations that add context and identify changes in requirement, priority or buying readiness.</p><div className={styles.continuationRule}></div></article>
+      <article className={styles.continuationCard}><div className={styles.continuationCardTop}><span className={styles.continuationIcon}><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle><path d="M12 1v4M12 19v4M1 12h4M19 12h4"></path></svg></span></div><h3>Retargeting</h3><p>Keep your brand visible as prospects continue researching and evaluating their options.</p><div className={styles.continuationRule}></div></article>
     </div>
     <p className={styles.continuationClosing}>This helps maintain momentum between the initial lead interaction and the next meaningful sales conversation.</p>
   </div>
@@ -171,14 +173,14 @@ export default function RdigsEngagementEnginePage() {
         <div className={styles.memoryInner}>
           <span className={`${styles.pill} ${styles.memoryEyebrow}`}>MORE THAN LEAD GENERATION</span>
           <h2 id="memoryTitle">Built to create <RunningHighlight>memory and momentum.</RunningHighlight></h2>
-          <p className={styles.memoryIntro}>The Engagement Engine isn’t designed simply to increase the number of times someone sees an advertisement. Every stage has a purpose.</p>
+          <p className={styles.memoryIntro}>The Engagement Engine isnâ€™t designed simply to increase the number of times someone sees an advertisement. Every stage has a purpose.</p>
           <div className={styles.memoryCards}>
-            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Visibility</h3><p>builds familiarity</p></article>
-            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Content</h3><p>creates engagement</p></article>
-            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Intent</h3><p>helps prioritize</p></article>
-            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Human conversations</h3><p>create context</p></article>
-            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Qualification</h3><p>identifies needs</p></article>
-            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">↘</span><h3>Personalization</h3><p>increases relevance</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">â†˜</span><h3>Visibility</h3><p>builds familiarity</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">â†˜</span><h3>Content</h3><p>creates engagement</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">â†˜</span><h3>Intent</h3><p>helps prioritize</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">â†˜</span><h3>Human conversations</h3><p>create context</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">â†˜</span><h3>Qualification</h3><p>identifies needs</p></article>
+            <article className={styles.memoryCard}><span className={styles.memoryArrow} aria-hidden="true">â†˜</span><h3>Personalization</h3><p>increases relevance</p></article>
           </div>
           <div className={styles.memoryClosing}><strong>Continued engagement keeps your brand present.</strong></div>
         </div>
@@ -196,9 +198,9 @@ export default function RdigsEngagementEnginePage() {
               <p className={styles.campaignNote}>Or we can build a custom channel mix around your specific campaign requirements.</p>
             </div>
             <article className={styles.campaignCard} aria-label="Typical program details">
-              <div className={styles.campaignCardHeader}><span>TYPICAL PROGRAM</span><span className={styles.campaignDiamond} aria-hidden="true">◆</span></div>
+              <div className={styles.campaignCardHeader}><span>TYPICAL PROGRAM</span><span className={styles.campaignDiamond} aria-hidden="true">â—†</span></div>
               <dl className={styles.campaignDetails}>
-                <div><dt>DURATION</dt><dd>8–12+ weeks</dd></div>
+                <div><dt>DURATION</dt><dd>8â€“12+ weeks</dd></div>
                 <div><dt>AUDIENCE</dt><dd>Custom ICP and/or Target Account List</dd></div>
                 <div><dt>CHANNELS</dt><dd>Configured by campaign</dd></div>
                 <div><dt>LEAD QUALIFICATION</dt><dd>Custom qualification framework</dd></div>
@@ -206,7 +208,7 @@ export default function RdigsEngagementEnginePage() {
               </dl>
               <div className={styles.campaignPrice}>
                 <div><span>STARTING FROM</span><strong>$10,000</strong></div>
-                <a href="#engagement-campaign-request" className={styles.campaignCta}>Build Your Program <span aria-hidden="true">→</span></a>
+                <a href="#engagement-campaign-request" className={styles.campaignCta}>Build Your Program <span aria-hidden="true">â†’</span></a>
               </div>
             </article>
           </div>
@@ -215,7 +217,7 @@ export default function RdigsEngagementEnginePage() {
           <div className={styles.whyInner}>
             <span className={`${styles.pill} ${styles.whyEyebrow}`}>WHY RDIGS?</span>
             <h2 id="whyTitle">Demand generation with <RunningHighlight>more behind<br className={styles.whyDesktopBreak} /> the lead.</RunningHighlight></h2>
-            <p className={styles.whyIntro}>We believe the value of a demand generation partner shouldn’t be measured only by how many leads they deliver. It should be measured by how effectively they help create meaningful engagement with the market.</p>
+            <p className={styles.whyIntro}>We believe the value of a demand generation partner shouldnâ€™t be measured only by how many leads they deliver. It should be measured by how effectively they help create meaningful engagement with the market.</p>
             <div className={styles.whyCards}>
               <article className={styles.whyCard}><span className={styles.whyIcon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg></span><h3>Human + Digital</h3><p>Combine real conversations with digital engagement rather than relying on one channel alone.</p></article>
               <article className={styles.whyCard}><span className={styles.whyIcon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1" /></svg></span><h3>Data-Driven Targeting</h3><p>Build programs around clearly defined accounts, audiences and buyer personas.</p></article>
@@ -227,6 +229,16 @@ export default function RdigsEngagementEnginePage() {
           </div>
         </section>
         <EngagementCampaignForm />
+        <section className={styles.campaignContactSection} aria-label="Contact our demand generation team">
+          <div className={styles.campaignContactInner}>
+            <h2>Let’s build an Engagement Engine around your next campaign.</h2>
+            <a href="/contact">Talk to Our Demand Generation Team <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
 </main>
   );
 }
+
+
+
+

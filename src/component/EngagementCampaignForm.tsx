@@ -54,8 +54,6 @@ export default function EngagementCampaignForm() {
           <h2 id="engineRequestTitle">Stop generating leads in isolation. <RunningHighlight>Start building demand that stays with the buyer.</RunningHighlight></h2>
           <p className={styles.lead}>Your prospects don’t experience your marketing as separate channels. Neither should your demand generation strategy.</p>
           <p className={styles.body}>The RDIGS Engagement Engine connects audience intelligence, content, digital engagement and human conversations to create more meaningful interactions before, during and after lead capture. So when your sales team starts the conversation, your brand has already started the journey.</p>
-          <p className={styles.prompt}>Let’s build an Engagement Engine around your next campaign.</p>
-          <a className={styles.cta} href="/contact">Talk to Our Demand Generation Team <span aria-hidden="true">→</span></a>
         </div>
 
         <div className={styles.card}>
