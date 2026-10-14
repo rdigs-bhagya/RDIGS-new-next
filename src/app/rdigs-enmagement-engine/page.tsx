@@ -146,9 +146,9 @@ export default function RdigsEngagementEnginePage() {
         <p>And that context can inform what happens next. Instead of serving every lead the same generic message, post-lead engagement can reinforce messaging aligned with the needs and interests identified during qualification.</p>
       </div>
       <div className={styles.personalOutcomes}>
-        <div className={styles.personalOutcome}><span className={styles.personalIcon}>â™™</span><span>One prospect</span></div>
-        <div className={styles.personalOutcome}><span className={styles.personalIcon}>âŒ•</span><span>One identified need</span></div>
-        <div className={styles.personalOutcome}><span className={styles.personalIcon}>â–£</span><span>More relevant follow-up engagement.</span></div>
+        <div className={styles.personalOutcome}><span className={styles.personalIcon} aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><span>One prospect</span></div>
+        <div className={styles.personalOutcome}><span className={styles.personalIcon} aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7"/><path d="m16 16 5 5"/></svg></span><span>One identified need</span></div>
+        <div className={styles.personalOutcome}><span className={styles.personalIcon} aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H5l-3 2 1-5a8.5 8.5 0 1 1 18-5.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></span><span>More relevant follow-up engagement.</span></div>
       </div>
     </div>
   </div>

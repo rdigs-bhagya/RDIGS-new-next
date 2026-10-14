@@ -762,6 +762,7 @@
 .personalOutcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;transform:translateX(-20px)}
 .personalOutcome{display:flex;min-height:74px;flex-direction:column;justify-content:flex-start;gap:5px;border:1px solid #d0d0d0;border-radius:7px;padding:9px 11px;font-size:12px;line-height:1.15}
 .personalIcon{display:grid;width:18px;height:18px;place-items:center;border-radius:50%;background:#b7ddfb;color:#1269b5;font-size:10px}
+.personalIcon svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:700px){
 .personalSection{padding:24px 20px}
 .personalIntro{grid-template-columns:1fr;gap:14px;margin:24px 0 0}
