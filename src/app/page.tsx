@@ -20,22 +20,22 @@ type Slide = {
 export default function Homepage() {
   const slides: Slide[] = [
     {
+      title1: 'FOR MOST DEMAND GEN',
+      title2: 'AGENCIES, DEMAND GENERATION STOPS AT THE DOWNLOAD.',
+      text: 'We build strategies that make buyers remember your brand \u2014 and come back when they\u2019re ready to buy.',
+      img: '/home/own.png',
+    },
+    {
       title1: 'OWN THE',
       title2: 'BUYER JOURNEY',
       text: 'Leverage advanced insights, personalised ABM, and precision targeting to engage real decision-makers.',
-      img: '/home/own.png',
+      img: '/home/ingnite.png',
     },
     {
       title1: 'IGNITE DEMAND.',
       title2: 'DRIVE GROWTH.',
       text: 'Fuel your B2B marketing with data-driven strategies that capture attention and convert intent into revenue.',
       img: '/home/ROI.png',
-    },
-    {
-      title1: 'FOR MOST DEMAND GEN',
-      title2: 'AGENCIES, DEMAND GENERATION STOPS AT THE DOWNLOAD',
-      text: 'We build strategies that make buyers remember your brand — and come back when they’re ready to buy.',
-      img: '/home/ingnite.png',
     },
   ];
 
@@ -54,6 +54,8 @@ export default function Homepage() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isSubscribeModalOpen, setIsSubscribeModalOpen] = useState(false);
+  const [isThankYouOpen, setIsThankYouOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(
@@ -75,16 +77,116 @@ export default function Homepage() {
     return () => window.removeEventListener('scroll', checkScroll);
   }, []);
 
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsSubscribeModalOpen(true), 75_000);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!isSubscribeModalOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsSubscribeModalOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [isSubscribeModalOpen]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    e.currentTarget.reset();
+    setIsThankYouOpen(true);
+  };
+
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    e.currentTarget.reset();
+    setIsSubscribeModalOpen(false);
   };
 
   return (
     <div className="relative overflow-hidden bg-white">
+      {isSubscribeModalOpen && (
+        <div
+          className="fixed inset-0 z-[10000] grid place-items-center overflow-y-auto bg-black/50 p-4"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setIsSubscribeModalOpen(false);
+          }}
+        >
+          <section
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="newsletter-title"
+            className="w-full max-w-[464px] rounded-[20px] bg-[#f6fbfe] p-3 shadow-2xl"
+          >
+            <form onSubmit={handleSubscribe} className="relative rounded-[20px] bg-white p-3 shadow-sm">
+              <button
+                type="button"
+                aria-label="Close newsletter subscription"
+                onClick={() => setIsSubscribeModalOpen(false)}
+                className="absolute right-3 top-2 text-[24px] leading-none text-[#3099D5] hover:text-[#16243D]"
+              >
+                ×
+              </button>
+              <h2 id="newsletter-title" className="mb-2 pr-6 text-center text-[21px] font-bold text-[#3099D5]">
+                Stay Updated With Our Newsletter!
+              </h2>
+              <p className="mb-3 text-center text-[11px] leading-[1.5] text-[#212529]">
+                Be the first to hear about the latest B2B marketing news,<br className="hidden sm:block" />
+                insights, &amp; exclusive offers from RDIGS.
+              </p>
+              <label className="relative mb-3 block">
+                <span className="sr-only">Email address</span>
+                <input
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  placeholder="Enter Your Email"
+                  required
+                  className="w-full rounded-full bg-[#f1f4f8] px-4 py-2.5 pr-12 text-sm text-[#31415a] shadow-sm outline-none placeholder:text-[#65748b] focus:ring-2 focus:ring-[#acd3f5]"
+                />
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 fill-[#3099D5]">
+                  <path d="M20 4H4a2 2 0 0 0-2 2v.4l10 6.25L22 6.4V6a2 2 0 0 0-2-2Zm2 4.75-9.47 5.92a1 1 0 0 1-1.06 0L2 8.75V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.75Z" />
+                </svg>
+              </label>
+              <label className="mb-3 flex items-start gap-2 text-[9px] leading-[1.4] text-[#212529]">
+                <input type="checkbox" name="consentCheck" required className="mt-0.5 shrink-0 accent-[#3099D5]" />
+                <span>
+                  By subscribing, you agree to receive valuable content, industry trends, &amp; marketing insights from RDIGS, its subsidiaries, &amp; affiliates (collectively, “RDIGS”) via email &amp; phone. You can opt out anytime as detailed in our Privacy Policy.
+                </span>
+              </label>
+              <button type="submit" className="mx-auto block w-1/2 rounded-full bg-[#3099D5] py-1 text-[18px] font-bold text-white transition-colors hover:bg-[#16243D]">
+                Subscribe Now
+              </button>
+            </form>
+          </section>
+        </div>
+      )}
+
+      {isThankYouOpen && (
+        <div
+          className="fixed inset-0 z-[10001] grid place-items-center bg-black/40 p-4"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setIsThankYouOpen(false);
+          }}
+        >
+          <section role="dialog" aria-modal="true" aria-labelledby="subscribe-thanks-title" className="rounded-[10px] bg-white px-10 py-6 text-center shadow-2xl">
+            <h2 id="subscribe-thanks-title" className="text-xl font-semibold text-[#16243D]">Thank you for subscribing!</h2>
+            <button type="button" onClick={() => setIsThankYouOpen(false)} className="mt-4 rounded-md bg-[#3099D5] px-4 py-2 text-white hover:bg-[#16243D]">
+              Close
+            </button>
+          </section>
+        </div>
+      )}
+
       {/* Floating Scroll-to-Top Button */}
       {showScrollTop && (
         <button
@@ -97,13 +199,13 @@ export default function Homepage() {
       )}
 
       {/* Hero Carousel Section */}
-      <section className="relative bg-[#F0F9FD] py-14 px-6 lg:px-14">
-        <div className="max-w-[1240px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <section className="relative bg-[#F0F9FD] px-0 py-5">
+        <div className="flex min-h-[400px] w-full flex-col items-center justify-between gap-5 px-5 md:flex-row md:px-[66px]">
           {/* Left Section */}
-          <div className="flex-1 max-w-xl">
-            {currentIndex === 2 ? (
+          <div className="w-full flex-1 md:w-[45%] md:max-w-none">
+            {currentIndex === 0 ? (
               <>
-                <h1 className="text-3xl sm:text-4xl md:text-[36px] font-extrabold tracking-tight leading-[1.15] uppercase mb-2">
+                <h1 className="mb-0 text-[30px] font-bold uppercase leading-[1.15] tracking-tight sm:text-[34px] md:text-[36px]">
                   <span className="text-[#3099D5]">FOR MOST DEMAND GEN</span><br />
                   <span className="text-[#3099D5]">AGENCIES, </span>
                   <span className="text-[#16243D]">DEMAND GENERATION</span><br />
@@ -112,46 +214,46 @@ export default function Homepage() {
               </>
             ) : (
               <>
-                <h1 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#3099D5] tracking-tight leading-tight uppercase">
+                <h1 className="text-[30px] font-bold uppercase leading-[1.15] tracking-tight text-[#3099D5] sm:text-[34px] md:text-[36px]">
                   {slides[currentIndex].title1}
                 </h1>
-                <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#16243D] tracking-tight leading-[1.1] mt-1 uppercase">
+                <h2 className="mt-0 text-[30px] font-bold uppercase leading-[1.15] tracking-tight text-[#16243D] sm:text-[34px] md:text-[36px]">
                   {slides[currentIndex].title2}
                 </h2>
               </>
             )}
-            <p className="mt-3 text-base sm:text-[17px] text-[#16243D] leading-relaxed font-medium">
+            <p className="mt-2 text-[16px] font-normal leading-[1.6] text-black sm:text-[17px] md:text-[18px]">
               {slides[currentIndex].text}
             </p>
 
             {/* Email Subscription Form */}
             <form
-              className="mt-4 flex flex-col sm:flex-row gap-3 w-full max-w-2xl"
+              className="mt-4 flex w-full max-w-2xl flex-col gap-[10px] sm:flex-row"
               onSubmit={handleSubmit}
             >
               <input
                 type="email"
                 placeholder="Enter Your Email"
                 required
-                className="bg-white border border-gray-300 rounded-sm px-6 py-3 flex-[1.5] text-[15px] text-[#333333] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3099D5] shadow-sm"
+                className="min-w-0 flex-[1.5] rounded-[10px] border-0 bg-white px-[10px] py-[10px] text-[16px] text-[#333333] shadow-[0_4px_8px_rgba(128,128,128,0.4)] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3099D5] sm:min-w-[250px] md:w-[450px] md:flex-none"
               />
 
               <button
                 type="submit"
-                className="bg-[#3099D5] hover:bg-[#16243D] text-white font-semibold text-[15px] px-8 py-3 rounded-sm shadow transition-colors duration-300 whitespace-nowrap"
+                className="whitespace-nowrap rounded-[10px] bg-[#3099D5] px-5 py-[10px] text-[16px] font-medium text-white shadow-[0_4px_8px_rgba(128,128,128,0.4)] transition-colors hover:bg-[#16243D]"
               >
                 Get Growth Insights
               </button>
             </form>
 
-            <p className="mt-4 text-[17px] sm:text-[17px] text-[#16243D] font-medium">
+            <p className="mt-2 text-[16px] font-normal leading-[1.6] text-black sm:text-[17px] md:text-[18px]">
               Stay ahead with insights that help you drive measurable growth.
             </p>
           </div>
 
           {/* Right Section (Hero Illustration) */}
-          <div className="flex-1 flex justify-center items-center">
-            <div className="relative w-full max-w-[420px] h-[280px] sm:h-[320px]">
+          <div className="flex w-full flex-1 items-center justify-center md:w-[45%] md:justify-end">
+            <div className="relative h-[240px] w-full max-w-[420px] sm:h-[280px] md:h-[300px]">
               <Image
                 src={slides[currentIndex].img}
                 alt={slides[currentIndex].title2}
@@ -164,7 +266,7 @@ export default function Homepage() {
         </div>
 
         {/* Carousel Dots */}
-        <div className="flex justify-center mt-6 space-x-1.5">
+        <div className="mt-2 flex justify-center space-x-1.5">
           {slides.map((_, index) => (
             <button
               key={index}
