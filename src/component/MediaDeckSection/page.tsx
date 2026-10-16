@@ -125,13 +125,13 @@ export default function MediaDeckSection() {
 
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-[100] grid place-items-center overflow-y-auto bg-black/80 p-3 sm:p-6"
+          className="fixed inset-0 z-[9999] grid place-items-center overflow-y-auto bg-black/80 p-3 sm:p-6"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) closeModal();
           }}
         >
           <section
-            className="relative w-full max-w-[500px] rounded-[30px] bg-[#f4fbff] p-4 shadow-2xl sm:p-6"
+            className="relative w-full max-w-[500px] rounded-[30px] bg-[#f6fbfe] p-4 shadow-2xl sm:p-6"
             role="dialog"
             aria-modal="true"
             aria-labelledby="media-deck-title"

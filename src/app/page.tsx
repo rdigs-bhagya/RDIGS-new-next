@@ -247,7 +247,7 @@ export default function Homepage() {
                 Empower your sales team and drive growth with our Account-Based Marketing strategies.
               </p>
               <Link
-                href="/Services"
+                href="/Services/b2b-lead-generation"
                 className="bg-[#3099D5] hover:bg-[#16243D] text-white font-medium text-[15px] sm:text-[16px] rounded-full py-2 px-6 transition-colors shadow-sm"
               >
                 Learn More
