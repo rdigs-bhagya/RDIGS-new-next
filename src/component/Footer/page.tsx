@@ -53,7 +53,7 @@ export default function Footer() {
                 <h5 className="font-semibold text-[20px] text-[#16243D] mb-4">Company</h5>
                 <ul className="space-y-2.5 text-[#16243D] text-[16px]">
                   <li>
-                    <Link href="/about1" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/About" className="hover:text-[#3099D5] transition-colors">
                       About Us
                     </Link>
                   </li>
@@ -63,13 +63,18 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/ourdifferentiation" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/our-differentiation" className="hover:text-[#3099D5] transition-colors">
                       Our Differentiation
                     </Link>
                   </li>
                   <li>
-                    <Link href="/life" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/life-at-rdigs" className="hover:text-[#3099D5] transition-colors">
                       Life At RDIGS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" className="hover:text-[#3099D5] transition-colors">
+                      Contact
                     </Link>
                   </li>
                 </ul>
@@ -80,12 +85,12 @@ export default function Footer() {
                 <h5 className="font-semibold text-[20px] text-[#16243D] mb-4">Resources</h5>
                 <ul className="space-y-2.5 text-[#16243D] text-[16px]">
                   <li>
-                    <Link href="/casestudies" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/case-studies" className="hover:text-[#3099D5] transition-colors">
                       Case Studies
                     </Link>
                   </li>
                   <li>
-                    <Link href="/corporatedesk" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/media-deck" className="hover:text-[#3099D5] transition-colors">
                       Corporate Deck
                     </Link>
                   </li>
@@ -95,7 +100,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/blog" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/blogs" className="hover:text-[#3099D5] transition-colors">
                       Blogs
                     </Link>
                   </li>
@@ -147,22 +152,22 @@ export default function Footer() {
                 <h5 className="font-semibold text-[20px] text-[#16243D] mb-4">Services</h5>
                 <ul className="space-y-2.5 text-[#16243D] text-[16px]">
                   <li>
-                    <Link href="/b2bservice" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/Services/demand-amplifier" className="hover:text-[#3099D5] transition-colors">
                       Demand Amplifier
                     </Link>
                   </li>
                   <li>
-                    <Link href="/b2badevertising" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/Services/account-based-marketing" className="hover:text-[#3099D5] transition-colors">
                       Account-Based Marketing
                     </Link>
                   </li>
                   <li>
-                    <Link href="/b2bsdrasaservice" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/Services/problem-aware-lead-generation" className="hover:text-[#3099D5] transition-colors">
                       Problem-Aware Lead Generation
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contentsyndication" className="hover:text-[#3099D5] transition-colors">
+                    <Link href="/Services/data-verification" className="hover:text-[#3099D5] transition-colors">
                       Data Verification
                     </Link>
                   </li>
@@ -268,15 +273,15 @@ export default function Footer() {
             <span> , All rights reserved.</span>
           </div>
           <div className="flex flex-wrap items-center gap-6 pr-12 lg:pr-16">
-            <Link href="/privacypolicy" className="text-[#3099D5] hover:underline">
+            <a href="/privacypolicy.html" className="text-[#3099D5] hover:underline">
               Privacy Policy
-            </Link>
-            <Link href="/ccpa" className="text-[#3099D5] hover:underline">
+            </a>
+            <a href="/ccpa.html" className="text-[#3099D5] hover:underline">
               CCPA
-            </Link>
-            <Link href="/terms" className="text-[#3099D5] hover:underline">
+            </a>
+            <a href="/terms.html" className="text-[#3099D5] hover:underline">
               Terms &amp; Conditions
-            </Link>
+            </a>
           </div>
         </div>
       </div>
